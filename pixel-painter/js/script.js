@@ -14,7 +14,7 @@ const NUM_PIXELS = 1000;
 const PIXEL_REVERT_DELAY = 1000;
 const DEFAULT_COLOR = 'black';
 //let PAINT_COLOR = 'blue';
-
+let rotation=0;
 // Set up our starting function for when the page loads
 window.onload = setup;
 
@@ -31,8 +31,22 @@ function setup() {
     pixel.setAttribute('class', 'pixel');
     // Add a mouseover handler to the new element
     pixel.addEventListener('mouseover', paint);
-    // Add the element to the body of the page
+    // Add keycontrol to rotate the element
     document.body.appendChild(pixel);
+
+  }
+
+  document.addEventListener('keydown', rotate);
+
+}
+
+
+function rotate(e){
+  if(e.keyCode===39){
+    //let imagesDiv = document.getElementById('images');
+    //let gameIcons = imagesDiv.getElementsByClassName('game-icon');
+    e.target.style.transform=`rotate(${rotation}deg)`;
+    rotation=rotation+50;
   }
 }
 
