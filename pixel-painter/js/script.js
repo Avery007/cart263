@@ -30,8 +30,9 @@ function setup() {
     // Add the 'pixel' class to the new element
     pixel.setAttribute('class', 'pixel');
     // Add a mouseover handler to the new element
-    pixel.addEventListener('mouseover', paint);
-
+    // must click to draw, so easier control
+    pixel.addEventListener('mouseover'&&'click', paint);
+  //  pixel.addEventListener('mouseover'&&'keydown', remove);
     document.body.appendChild(pixel);
 
   }
@@ -53,6 +54,11 @@ function rotate(e){
   }
 }
 
+function remove(e){
+  if(e.keyCode===32)
+
+
+}
 // paint
 //
 // Called by the mouseover event handler on each pixel. Changes
@@ -69,7 +75,7 @@ function paint(e) {
   // Set a timeout to call the reset function after a delay
   // When we pass additional parameters (like 'pixel' below) they
   // are passed to the callback function (resetPixel)
-  setTimeout(resetPixel, PIXEL_REVERT_DELAY, pixel);
+  //setTimeout(resetPixel, PIXEL_REVERT_DELAY, pixel);
 }
 
 // resetPixel
