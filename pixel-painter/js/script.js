@@ -38,7 +38,9 @@ function setup() {
   }
 // Add keycontrol to rotate the el'keydown
   document.addEventListener('keydown', rotate);
-
+  // display a text as intruction
+  let text=document.getElementById('text');
+  text.innerText="Click to draw!";
 }
 
 // function to rotate the pixels
