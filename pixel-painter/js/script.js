@@ -3,7 +3,7 @@
 /********************************************************************
 
 Pixel painter
-Pippin Barr
+Qingyi Deng
 
 A small DOM-based program for "painting" on div-based pixels.
 
@@ -36,26 +36,34 @@ function setup() {
     document.body.appendChild(pixel);
 
   }
-// Add keycontrol to rotate the element
+// Add keycontrol to rotate the el'keydown
   document.addEventListener('keydown', rotate);
 
 }
 
 // function to rotate the pixels
 function rotate(e){
+
   if(e.keyCode===39)
   {  rotation=rotation+1;
     let wholePixels = document.getElementsByClassName('pixel');// get the entire class
     for (let i = 0; i < wholePixels.length; i++) {
-  wholePixels[i].style.transform = `rotate(${rotation}deg)`
+  wholePixels[i].style.transform = `rotate(${rotation}deg)`;
 
 }
 
   }
 }
 
+// tried to add a remove funciton that when mouseover and key is pressed, it will remove the target pixel
 function remove(e){
-  if(e.keyCode===32)
+  if(e.keyCode===65)
+  {let pixel = e.target;
+  pixel.style.opacity = 0;
+    //e.target.style.backgroundColor=`rgb(${0}, ${0}, ${0})`;
+
+      //setTimeout(resetPixel, PIXEL_REVERT_DELAY, pixel);
+  }
 
 
 }
@@ -75,7 +83,7 @@ function paint(e) {
   // Set a timeout to call the reset function after a delay
   // When we pass additional parameters (like 'pixel' below) they
   // are passed to the callback function (resetPixel)
-  //setTimeout(resetPixel, PIXEL_REVERT_DELAY, pixel);
+
 }
 
 // resetPixel
