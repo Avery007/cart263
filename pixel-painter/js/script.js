@@ -31,22 +31,25 @@ function setup() {
     pixel.setAttribute('class', 'pixel');
     // Add a mouseover handler to the new element
     pixel.addEventListener('mouseover', paint);
-    // Add keycontrol to rotate the element
+
     document.body.appendChild(pixel);
 
   }
-
+// Add keycontrol to rotate the element
   document.addEventListener('keydown', rotate);
 
 }
 
-
+// function to rotate the pixels
 function rotate(e){
-  if(e.keyCode===39){
-    //let imagesDiv = document.getElementById('images');
-    //let gameIcons = imagesDiv.getElementsByClassName('game-icon');
-    e.target.style.transform=`rotate(${rotation}deg)`;
-    rotation=rotation+50;
+  if(e.keyCode===39)
+  {  rotation=rotation+1;
+    let wholePixels = document.getElementsByClassName('pixel');// get the entire class
+    for (let i = 0; i < wholePixels.length; i++) {
+  wholePixels[i].style.transform = `rotate(${rotation}deg)`
+
+}
+
   }
 }
 
