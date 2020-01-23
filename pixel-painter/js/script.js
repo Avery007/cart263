@@ -15,6 +15,7 @@ const PIXEL_REVERT_DELAY = 1000;
 const DEFAULT_COLOR = 'black';
 //let PAINT_COLOR = 'blue';
 let rotation=0;
+let unwanted;
 // Set up our starting function for when the page loads
 window.onload = setup;
 
@@ -31,16 +32,18 @@ function setup() {
     pixel.setAttribute('class', 'pixel');
     // Add a mouseover handler to the new element
     // must click to draw, so easier control
-    pixel.addEventListener('mouseover'&&'click', paint);
-  //  pixel.addEventListener('mouseover'&&'keydown', remove);
+    pixel.addEventListener('click', paint);
+    pixel.addEventListener('mouseover', pointed);
+
     document.body.appendChild(pixel);
 
   }
 // Add keycontrol to rotate the el'keydown
   document.addEventListener('keydown', rotate);
+  document.addEventListener('keydown', remove);
   // display a text as intruction
   let text=document.getElementById('text');
-  text.innerText="Click to draw!";
+  text.innerText="Click to draw! And use mouse and the key A to remove";
 }
 
 // function to rotate the pixels
@@ -60,15 +63,23 @@ function rotate(e){
 // tried to add a remove funciton that when mouseover and key is pressed, it will remove the target pixel
 function remove(e){
   if(e.keyCode===65)
-  {let pixel = e.target;
-  pixel.style.opacity = 0;
-    //e.target.style.backgroundColor=`rgb(${0}, ${0}, ${0})`;
+  {
+  unwanted.style.backgroundColor = DEFAULT_COLOR ;
 
       //setTimeout(resetPixel, PIXEL_REVERT_DELAY, pixel);
   }
 
 
 }
+
+function pointed(e){
+unwanted=e.target;
+console.log(e);
+
+
+}
+
+
 // paint
 //
 // Called by the mouseover event handler on each pixel. Changes
