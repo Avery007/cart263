@@ -19,6 +19,9 @@ const UPDATE_FREQUENCY = 500;
 // A place to store the jQuery selection of all spans
 let $spans;
 let $secret;
+let secretFound=0;
+let $color;
+let $count;
 
 // When the document is loaded we call the setup function
 $(document).ready(setup);
@@ -37,6 +40,8 @@ function setup() {
 
   $secret=$('.secretext');
   $secret.on('mouseover', highLight);
+
+
 }
 
 // spanClicked()
@@ -48,7 +53,15 @@ function spanClicked() {
 
 }
 function highLight() {
+  $color=$(this).css("background-color");
+
+    if ($color == 'rgb(255, 255, 255)'){
    $(this).css('background-color', 'red');
+   secretFound =secretFound+1;
+   $('#count').text(secretFound);
+ console.log(secretFound);
+  // $secretFound=$secretFound+1;
+ }
     //$(this).removeClass('revealed');
 }
 // update()
