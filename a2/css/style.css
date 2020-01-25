@@ -26,15 +26,14 @@ body {
   color: red; /* Emergency! */
 }
 
-.highlight{
-  background-color: yellow;
 
-}
 #count{
  background-color: white;
 
 }
 .secretext{
   background-color: white;
+  text-decoration:none;
+  color:black;  
 
 }

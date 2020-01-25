@@ -21,7 +21,7 @@ let $spans;
 let $secret;
 let secretFound=0;
 let $color;
-let $count;
+
 
 // When the document is loaded we call the setup function
 $(document).ready(setup);
@@ -35,8 +35,7 @@ function setup() {
   // Set a click handler on the spans (so we know when they're clicked)
   $spans.on('click', highLight);
   // Set an interval of 500 milliseconds to update the state of the page
-  //setInterval(update, UPDATE_FREQUENCY);
-
+  setInterval(update, UPDATE_FREQUENCY);
 
   $secret=$('.secretext');
   $secret.on('mouseover', highLight);
@@ -59,10 +58,9 @@ function highLight() {
    $(this).css('background-color', 'red');
    secretFound =secretFound+1;
    $('#count').text(secretFound);
- console.log(secretFound);
-  // $secretFound=$secretFound+1;
+
  }
-    //$(this).removeClass('revealed');
+
 }
 // update()
 //
