@@ -18,9 +18,9 @@ const UPDATE_FREQUENCY = 500;
 
 // A place to store the jQuery selection of all spans
 let $spans;
-let $secret;
-let secretFound=0;
-let $color;
+let $secret; // refer to secret text class
+let secretFound = 0; //check how mnay secrets are found
+let $color; // color of the secret text
 
 
 // When the document is loaded we call the setup function
@@ -37,7 +37,7 @@ function setup() {
   // Set an interval of 500 milliseconds to update the state of the page
   setInterval(update, UPDATE_FREQUENCY);
 
-  $secret=$('.secretext');
+  $secret = $('.secretext');
   $secret.on('mouseover', highLight);
 
 
@@ -51,15 +51,17 @@ function spanClicked() {
   $(this).removeClass('revealed');
 
 }
+
+// hightlight the selected texts and count
 function highLight() {
-  $color=$(this).css("background-color");
+  $color = $(this).css("background-color");
 
-    if ($color == 'rgb(255, 255, 255)'){
-   $(this).css('background-color', 'red');
-   secretFound =secretFound+1;
-   $('#count').text(secretFound);
+  if ($color == 'rgb(255, 255, 255)') {
+    $(this).css('background-color', 'red');
+    secretFound = secretFound + 1;
+    $('#count').text(secretFound); // change text content
 
- }
+  }
 
 }
 // update()
