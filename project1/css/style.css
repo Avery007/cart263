@@ -1,3 +1,24 @@
 body {
 
 }
+
+#sisyphus{ position:absolute;
+                 top:50px;
+                 right:100px;
+                 z-index:2;
+      animation:  sisyphus steps(28) 1s infinite both;
+      animation-play-state: paused;
+
+}
+
+#static{ position:absolute;
+                 top:50px;
+                 right:100px;
+                 z-index:3;
+                 display:block;
+
+
+}
+.stop {
+    animation-play-state: paused;
+}
