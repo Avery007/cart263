@@ -25,13 +25,19 @@ body {
 
 
 }
+
+#mind{
+  position:absolute;
+                   top:50px;
+                   left:100px;
+                   z-index:2;
+
+
+}
 .stop {
     animation-play-state: paused;
 }
 #dialog{
-  position:absolute;
-  top:50px;
-                   right:400px;
-                   z-index:3;
+
 
 }

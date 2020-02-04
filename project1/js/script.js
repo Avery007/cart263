@@ -13,12 +13,15 @@ to match your project! Write JavaScript to do amazing things below!
 let $sisyphus=$("#sisyphus");
 let $static=$("#static");
 
+var randomX = Math.floor( Math.random() * 1000 );
+var randomY = Math.floor( Math.random() * 500 );
  $(document).ready(setup);
 
 function setup(){
 setTimeout(shift,1000);
 document.addEventListener('keydown', movement);
 document.addEventListener('keyup', noMove);
+setTimeout(tip,2000);
 }
 
 function movement(e){
@@ -35,21 +38,31 @@ $("#static").css('display','block');
 
 }
 
+function tip(){
+  var randomX = Math.floor( Math.random() * 1000 );
+  var randomY = Math.floor( Math.random() * 500 );
+  $('#text').animate({
+      left: randomX,
+      top:randomY,
 
+
+
+    });
+setTimeout(tip,5000);
+  console.log(randomX);
+}
 
 function shift(){
 
 //  $static.css('width','+=500');
+$('#text').on('mouseover', showMind);
 $('#text').on('mouseover', dialog );
-//$('#text').on('mouseover', dialog );
- //dialog();
+// dialog();
 }
 function dialog(){
 
   $("#dialog").dialog({
   dialogClass: "no-close",
-//  position: { my:200, at: 300, };
-
     height: 400,
   buttons: [
     {
@@ -62,8 +75,16 @@ function dialog(){
     }
   ]
 });
-}
 
+$('#dialog').parent().offset({
+  top: 200,
+  left:100,
+});
+}
+function showMind(){
+   $('#mind').css('display','none');
+
+}
 function changeColor(){
 $(this).css('color','red');
 }
