@@ -24,17 +24,17 @@ setTimeout(shift,1000);
 document.addEventListener('keydown', movement);
 document.addEventListener('keyup', noMove);
 
-$('#suicide').on('click',restart);
+
 $('#suicide').css('cursor', 'crosshair');
 
 }
-function restart(){
-setTimeout(function(){location.reload()},5000);
- $('#text').text('You will restart in 5 seconds!');
+
+
+function gameOver(){
+   $('#gameOver').show();
+   $('#bulb').hide();
+  setTimeout(function(){location.reload()},5000);
 }
-
-
-
 
 function movement(e){
 if(e.keyCode===39){

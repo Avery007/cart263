@@ -57,12 +57,14 @@ body {
 
 
 }
-#text{
+#gameOver{
   position:absolute;
-                   top:450px;
-                   right:100px;
+  top:250px;
+                   left:200px;
                    z-index:6;
-
+                   display:none;
+                   color:black;
+                   font-size:35px;
 
 }
 #instruction{
@@ -85,4 +87,20 @@ color:yellow;
 #dialog{
 
 
+}
+
+.button {
+  position:absolute;
+  top:450px;
+  right:100px;
+  z-index:6;
+  cursor: pointer;
+  background-color: yellow;
+  border: none;
+  color: blue;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
 }
