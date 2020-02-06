@@ -23,7 +23,14 @@ setTimeout(shift,1000);
 document.addEventListener('keydown', movement);
 document.addEventListener('keyup', noMove);
 setTimeout(tip,2000);
+$('#suicide').on('click',restart);
 }
+function restart(){
+location.reload();
+
+}
+
+
 
 function movement(e){
 if(e.keyCode===39){
