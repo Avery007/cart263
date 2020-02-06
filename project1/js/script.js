@@ -12,6 +12,7 @@ to match your project! Write JavaScript to do amazing things below!
 
 let $sisyphus=$("#sisyphus");
 let $static=$("#static");
+let found=false;
 
 var randomX = Math.floor( Math.random() * 1000 );
 var randomY = Math.floor( Math.random() * 500 );
@@ -39,6 +40,7 @@ $("#static").css('display','block');
 }
 
 function tip(){
+  if(found==false){
   var randomX = Math.floor( Math.random() * 1000 );
   var randomY = Math.floor( Math.random() * 500 );
   $('#text').animate({
@@ -51,14 +53,17 @@ function tip(){
 setTimeout(tip,5000);
   console.log(randomX);
 }
+}
 
 function shift(){
 
 //  $static.css('width','+=500');
 $('#text').on('mouseover', showMind);
+
 $('#text').on('mouseover', dialog );
 // dialog();
 }
+
 function dialog(){
 
   $("#dialog").dialog({
@@ -81,8 +86,26 @@ $('#dialog').parent().offset({
   left:100,
 });
 }
+
 function showMind(){
-   $('#mind').css('display','none');
+  found=true;
+   $('#mind').css('display','block');
+   $('#tool').css('display','block');
+ dragTool();
+
+ $('#mind').droppable({
+    // The drop option specifies a function to call when a drop is completed
+    drop: dropEffect
+  });
+}
+function dropEffect(event,ui){
+ui.draggable.remove();
+$(this).attr('src', 'assets/images/brainfree.png');
+
+
+}
+function dragTool(){
+$( "#tool" ).draggable();
 
 }
 function changeColor(){
