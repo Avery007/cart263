@@ -101,8 +101,8 @@ function showMind(){
 function dropEffect(event,ui){
 ui.draggable.remove();
 $(this).attr('src', 'assets/images/brainfree.png');
-
-
+$('#sisyphus').attr('src', 'assets/images/end.gif');
+$('#static').css('display','none');
 }
 function dragTool(){
 $( "#tool" ).draggable();
