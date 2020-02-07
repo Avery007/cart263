@@ -28,7 +28,7 @@ function setup() {
 
 //key event:make the firgure move
 function movement(e) {
-  if (e.keyCode === 39) {
+  if (e.keyCode === 65) {
     $("#static").css('display', 'none'); //display gif
      breath.play();
   }
