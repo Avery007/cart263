@@ -1,99 +1,82 @@
-body {
+body {}
 
+#sisyphus {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  z-index: 2;
 }
 
-#sisyphus{ position:absolute;
-                 top:50px;
-                 right:100px;
-                 z-index:2;
-
-
+#static {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  z-index: 3;
+  display: block;
 }
 
-#static{ position:absolute;
-                 top:50px;
-                 right:100px;
-                 z-index:3;
-                 display:block;
-
-
+#bulb {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  z-index: 1;
 }
 
-
-#bulb{position:absolute;
-                 top:50px;
-                 left:100px;
-                 z-index:2;
-
-
+#mind {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  z-index: 2;
+  display: none;
 }
 
-#mind{
-  position:absolute;
-                   top:50px;
-                   left:100px;
-                   z-index:2;
-                   display:none;
-
-
+#tool {
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  z-index: 4;
+  display: none;
 }
 
-#tool{
-  position:absolute;
-                   top:300px;
-                   left:100px;
-                   z-index:4;
-
-                   display:none;
-
-
-
+#suicide {
+  position: absolute;
+  top: 260px;
+  right: 100px;
+  z-index: 5;
+  display: block;
 }
-#suicide{ position:absolute;
-                 top:260px;
-                 right:100px;
-                 z-index:5;
-                 display:block;
 
-
+#gameOver {
+  position: absolute;
+  top: 250px;
+  left: 200px;
+  z-index: 6;
+  display: none;
+  color: black;
+  font-size: 35px;
 }
-#gameOver{
-  position:absolute;
-  top:250px;
-                   left:200px;
-                   z-index:6;
-                   display:none;
-                   color:black;
-                   font-size:35px;
 
+#instruction {
+  background-color: blue;
+  color: yellow;
 }
-#instruction{
-background-color: blue;
-color:yellow;
 
-
-
+#finalMessage {
+  position: absolute;
+  top: 200px;
+  right: 50px;
+  z-index: 6;
+  display: none;
+  color: blue;
 }
-#finalMessage{
-  position:absolute;
-                   top:200px;
-                   right:50px;
-                   z-index:6;
-                   display:none;
-                   color:blue;
 
-
-}
-#dialog{
-
-
-}
+#dialog {}
 
 .button {
-  position:absolute;
-  top:450px;
-  right:100px;
-  z-index:6;
+  position: absolute;
+  top: 450px;
+  right: 100px;
+  z-index: 6;
   cursor: pointer;
   background-color: yellow;
   border: none;
@@ -102,5 +85,5 @@ color:yellow;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
 }

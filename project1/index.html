@@ -1,57 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
-    <!-- CSS stylesheet(s) -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
-    <!-- Library script(s) -->
-    <!-- Add your required libraries here either as local files or CDN-hosted files -->
+  <!-- CSS stylesheet(s) -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <!-- My script(s) -->
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
+  <!-- Library script(s) -->
+  <!-- Add your required libraries here either as local files or CDN-hosted files -->
+
+  <!-- My script(s) -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-  <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-  </head>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</head>
 
-  <body>
-     <img id="sisyphus" src="assets/images/sisyphus.gif">
-     <img id="bulb" src="assets/images/bulb.png" width='50' height='70'>
-    <img id="suicide" src="assets/images/suicide.png" width="100" height="150">
-     <img id="static" src="assets/images/static.jpg">
-     <img id="mind" src="assets/images/brain.jpg" width="150 height="150">
-      <img id="tool" src="assets/images/tool.png" width="100" height="100">
+<body>
+
+  <img id="sisyphus" src="assets/images/sisyphus.gif"> <!--source:gifhy.com-->
+  <img id="bulb" src="assets/images/bulb.png" width='50' height='70'> <!--source:clearpng.com-->
+  <img id="suicide" src="assets/images/suicide.png" width="100" height="150"> <!--source:clearpng.com-->
+  <img id="static" src="assets/images/static.jpg"> <!--source:gifhy.com-->
+  <img id="mind" src="assets/images/brain.jpg" width="150"height="150"> <!--source:clearpng.com-->
+  <img id="tool" src="assets/images/tool.png" width="100" height="100"> <!--source:clearpng.com-->
 
 
-<div id="dialog" title="Basic dialog" hidden>
-  <p>Brilliant! You can how to fix the problem right?</p>
-</div>
+  <div id="dialog" title="Wow" hidden>
+    <p>Brilliant! You can how to fix the problem right?</p>
+  </div>
 
-<div id="finalMessage"> Good Job!<br>
-                        Life changes<br>
-                        when your mind changes
-</div>
-<div id="instruction"> <p>You are stuck here for a punishment!<br>
-                              To clear your karma,<br>
-                              Press Key A to move the box up stairs<br>
+  <div id="finalMessage"> Good Job!<br>
+    Life changes<br>
+    when your mind changes
+  </div>
 
-                            Don't use your mouse to explore!</p>
-</div>
+  <div id="instruction">
+    <p>You are stuck here for a punishment!<br>
+      To clear your karma,<br>
+      Press Key A to move the box up stairs<br>
+    </p>
+  </div>
 
-<div id="gameOver"> <b>Unfortunately, game is over!<br>
-               You will restart in 5 secends!</b>
-</div>
-<button class= "button" onclick="gameOver()"> Suicide</button>
+  <div id="gameOver"> <b>Unfortunately, game is over!<br>
+      You will restart in 5 secends!</b>
+  </div>
+  <button class="button" onclick="gameOver()"> Suicide</button>
 </body>
 
 </html>
