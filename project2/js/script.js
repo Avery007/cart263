@@ -13,6 +13,15 @@ to match your project! Write JavaScript to do amazing things below!
 $(document).ready(setup);
 
 
-function setup() {
+function input() {
+   $("#myInput").show();
+  $("#buttonClose").show();
+alert("hello");
+}
+
+function generate(){
+  $("#buttonClose").hide();
+  var str = $("#myInput").val();
+  $('#text').text(str);
 
 }
