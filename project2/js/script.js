@@ -10,9 +10,55 @@ to match your project! Write JavaScript to do amazing things below!
 
 *********************************************************************/
 let size=10;
+let positionX=500;
+let positionY=100;
+
 $(document).ready(setup);
 
 
+function setup(){
+  document.addEventListener('keydown', moveUp);
+  document.addEventListener('keydown', moveDown);
+  document.addEventListener('keydown', moveLeft);
+  document.addEventListener('keydown', moveRight);
+
+
+}
+
+function moveUp(e){
+  if(e.keyCode===87)
+  {  positionY=positionY-10;
+document.getElementById("text").style.top = `${positionY}px`;
+
+}
+
+}
+function moveDown(e){
+  if(e.keyCode===83)
+  {  positionY=positionY+10;
+document.getElementById("text").style.top = `${positionY}px`;
+
+}
+
+}
+
+function moveLeft(e){
+  if(e.keyCode===65)
+  {  positionX=positionX-10;
+document.getElementById("text").style.left= `${positionX}px`;
+
+}
+
+}
+function moveRight(e){
+  if(e.keyCode===68)
+  {  positionX=positionX+10;
+document.getElementById("text").style.left= `${positionX}px`;
+
+}
+
+
+}
 
 function input() {
    $("#myInput").show();
@@ -35,6 +81,7 @@ function colorChange(){
   document.getElementById("text").style.color = `rgb(${r}, ${g}, ${b})`;
 
 }
+
 
 function sizeChange(){
 
