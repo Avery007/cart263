@@ -27,16 +27,16 @@ body {
 #buttonInput{
 
     position: absolute;
-    top: 450px;
-    right: 100px;
+    top: 100px;
+    left: 100px;
     z-index: 6;
 
 }
 #buttonClose{
 
     position: absolute;
-    top: 100px;
-    right: 100px;
+    top: 70px;
+    left: 100px;
     z-index: 6;
     display:none;
 
@@ -47,14 +47,43 @@ body {
   top: 100px;
   right: 100px;
   z-index: 7;
-  color:yellow;
-  font-size:25px;
+  color: yellow;
+  font-size:10px;
 
 
 
 }
 
+#buttonColor{
+  position: absolute;
+  top: 140px;
+  left: 100px;
+  z-index: 7;
+  font-size:10px;
 
+
+}
+#buttonSize{
+  position: absolute;
+  top: 180px;
+  left: 100px;
+  z-index: 7;
+
+  font-size:10px;
+
+
+}
+
+#buttonPosition{
+  position: absolute;
+  top: 160px;
+  right: 100px;
+  z-index: 7;
+  color:yellow;
+  font-size:10px;
+
+
+}
 #myInput{
   display:none;
 }
