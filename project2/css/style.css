@@ -89,7 +89,7 @@ body {
   top: 260px;
   right: 100px;
   z-index: 7;
-  color:yellow;
+
   font-size:10px;
 
 }
@@ -112,10 +112,26 @@ body {
 
 }
 
+.politicImg{
+  position: absolute;
+  top: 360px;
+  right: 150px;
+  z-index: 7;
+ display: none;
 
 
+}
 
+#buttonSelect{
+  position: absolute;
+  top: 460px;
+  right: 550px;
+  z-index: 7;
 
+}
+
+#trump{}
+#globe{}  
 
 #myInput{
   display:none;

@@ -15,7 +15,12 @@ let positionY=100;
 
 $(document).ready(setup);
 
+function chosing(){
+$('.politicImg').show();
+$('#trump').draggable();
+$('#globe').draggable();
 
+}
 function setup(){
   document.addEventListener('keydown', moveUp);
   document.addEventListener('keydown', moveDown);
