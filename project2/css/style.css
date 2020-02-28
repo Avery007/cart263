@@ -75,52 +75,7 @@ body {
 
 }
 
-#buttonXmore{
-  position: absolute;
-  top: 260px;
-  right: 140px;
-  z-index: 7;
-  color:yellow;
-  font-size:10px;
 
-}
-#buttonXless{
-  position: absolute;
-  top: 260px;
-  right: 100px;
-  z-index: 7;
-
-  font-size:10px;
-
-}
-#buttonYmore{
-  position: absolute;
-  top: 360px;
-  right: 100px;
-  z-index: 7;
-  color:yellow;
-  font-size:10px;
-
-}
-#buttonYless{
-  position: absolute;
-  top: 360px;
-  right: 150px;
-  z-index: 7;
-  color:yellow;
-  font-size:10px;
-
-}
-
-.politicImg{
-  position: absolute;
-  top: 360px;
-  right: 150px;
-  z-index: 7;
- display: none;
-
-
-}
 
 #buttonSelect{
   position: absolute;
@@ -129,9 +84,32 @@ body {
   z-index: 7;
 
 }
+#buttonRotate{
+  position: absolute;
+  top: 500px;
+  right: 550px;
+  z-index: 10;
 
-#trump{}
-#globe{}  
+}
+#buttonOpacity{
+  position: absolute;
+  top: 600px;
+  right: 550px;
+  z-index: 10;
+
+}
+#trump{
+  position: absolute;
+   top: 100px;
+   left: 200px;
+z-index: 7;
+display: none;
+}
+#globe{
+
+  z-index: 7;
+  display: none;
+}
 
 #myInput{
   display:none;
