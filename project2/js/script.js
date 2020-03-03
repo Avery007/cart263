@@ -25,23 +25,26 @@ function chosePolitic() {
   $('#globe').show();
 
   $('#trump').draggable();
-$('#trump').resizable();
+    $('#trump').resizable();
+    $('#globe').draggable();
+$('#globe').resizable();
+
 
 document.getElementById('trump').addEventListener('click', rotate);
 document.getElementById('globe').addEventListener('click', rotate);
-  $('#globe').draggable();
+
 
 
 }
 
 function choseTech() {
-  $('#lion1').show();
+
   $('#lion').show();
 
   $('#lion').draggable();
-//$('#lion1').resizable();
-$('#lion1').draggable();
-document.getElementById('lion1').addEventListener('click', rotate);
+$('#lion').resizable();
+
+
 document.getElementById('lion').addEventListener('click', rotate);
 //  $('#globe').draggable();
 
@@ -52,7 +55,7 @@ function choseWar() {
   $('#nuclear').show();
 
   $('#nuclear').draggable();
-//$('#lion1').resizable();
+$('#nuclear').resizable();
 ;
 document.getElementById('nuclear').addEventListener('click', rotate);
 
