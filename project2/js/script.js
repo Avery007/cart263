@@ -16,7 +16,11 @@ let imgWidth = 200;
 let drag = true;
 let rotation = 0;
 let opacity=10;
-
+let voiceParameters = {
+  pitch: 0.6,
+  rate: 0.6,
+  volume: 10,
+}
 
 $(document).ready(setup);
 
@@ -82,7 +86,7 @@ function setup() {
   document.addEventListener('keydown', moveDown);
   document.addEventListener('keydown', moveLeft);
   document.addEventListener('keydown', moveRight);
-
+responsiveVoice.speak("hello world",'UK English Male',voiceParameters);
 
 }
 
@@ -133,7 +137,7 @@ function generate() {
   $("#buttonClose").hide();
   var str = $("#myInput").val();
   $('#text').text(str);
-
+responsiveVoice.speak(str,'UK English Male',voiceParameters);
 }
 
 function colorChange() {
