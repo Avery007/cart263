@@ -64,6 +64,33 @@ body {
 
 
 }
+
+#buttonTech{
+  position: absolute;
+  top: 400px;
+  left: 200px;
+  z-index: 7;
+  font-size:10px;
+
+
+}
+
+#buttonWar{
+  position: absolute;
+   top: 400px;
+   left: 100px;
+z-index: 7;
+
+
+
+}
+#buttonPolitic{
+  position: absolute;
+  top: 400px;
+  left: 300px;
+  z-index: 7;
+
+}
 #buttonSize{
   position: absolute;
   top: 180px;
@@ -77,13 +104,6 @@ body {
 
 
 
-#buttonSelect{
-  position: absolute;
-  top: 460px;
-  right: 550px;
-  z-index: 7;
-
-}
 #buttonRotate{
   position: absolute;
   top: 500px;
@@ -105,6 +125,34 @@ body {
 z-index: 7;
 display: none;
 }
+
+#lion1{
+  position: absolute;
+   top: 170px;
+   left: 250px;
+z-index: 7;
+display: none;
+}
+
+#lion{
+  position: absolute;
+   top: 70px;
+   left: 250px;
+z-index: 7;
+display: none;
+}
+
+#nuclear{
+  position: absolute;
+   top: 200px;
+   left: 250px;
+z-index: 7;
+display: none;
+
+}
+
+
+
 #globe{
 
   z-index: 7;
