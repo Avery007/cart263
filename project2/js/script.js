@@ -35,7 +35,10 @@ $(document).ready(setup);
 function chosePolitic() {
   $('#trump').show();
   $('#globe').show();
-
+  $('#buttonWar').hide();
+  $('#buttonTech').hide();
+  $('#buttonPolitic').hide();
+  $('#buttonInput').show();
   $('#trump').draggable();
     $('#trump').resizable();
     $('#globe').draggable();
@@ -75,16 +78,19 @@ $('#bc').hide();
 
 function startEdit(){
   $('#buttonEdit').hide();
-  $('#buttonSize').show();
+  //$('#buttonSize').show();
   $('#buttonWar').show();
   $('#buttonTech').show();
-  $('#buttonColor').show();
+  //$('#buttonColor').show();
   $('#buttonPolitic').show();
-  $('#buttonInput').show();
+  //$('#buttonInput').show();
 
 }
 function choseTech() {
-
+  $('#buttonPolitic').hide();
+  $('#buttonWar').hide();
+  $('#buttonTech').hide();
+  $('#buttonInput').show();
   $('#lion').show();
 
   $('#lion').draggable();
@@ -99,7 +105,10 @@ document.getElementById('lion').addEventListener('click', rotate);
 
 function choseWar() {
   $('#nuclear').show();
-
+  $('#buttonPolitic').hide();
+  $('#buttonWar').hide();
+  $('#buttonTech').hide();
+  $('#buttonInput').show();
   $('#nuclear').draggable();
 $('#nuclear').resizable();
 ;
@@ -172,14 +181,18 @@ function moveRight(e) {
 function input() {
   $("#myInput").show();
   $("#buttonClose").show();
+  $("#buttonInput").hide();
 
 }
 
 function generate() {
   $("#buttonClose").hide();
-  var str = $("#myInput").val();
-  $('#text').text(str);
-  if(str==wordTrump||str==wordWar||wordAI){
+  var inputText = $("#myInput").val();
+  $('#text').text(inputText);
+  var result = inputText.localeCompare(wordAI);
+    var result1 = inputText.localeCompare(wordTrump);
+      var result2 = inputText.localeCompare(wordWar);
+  if(result==0||result1==0||result2==0){
     saying=false;
   }
 }
