@@ -24,6 +24,9 @@ let voiceParameters = {
 
 $(document).ready(setup);
 
+
+
+
 function chosePolitic() {
   $('#trump').show();
   $('#globe').show();
@@ -86,7 +89,7 @@ function setup() {
   document.addEventListener('keydown', moveDown);
   document.addEventListener('keydown', moveLeft);
   document.addEventListener('keydown', moveRight);
-responsiveVoice.speak("hello world",'UK English Male',voiceParameters);
+
 
 }
 
