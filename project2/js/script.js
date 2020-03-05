@@ -43,7 +43,7 @@ function chosePolitic() {
     $('#trump').resizable();
     $('#globe').draggable();
 $('#globe').resizable();
-
+  $('.instruction').text("To end the voice and continue, correctly input the sentence you heard! Notice punctuations and capital letters");
 document.getElementById('trump').addEventListener('click', rotate);
 document.getElementById('globe').addEventListener('click', rotate);
 speak(wordTrump);
@@ -78,7 +78,7 @@ $('#bc').hide();
 
 function startEdit(){
   $('#buttonEdit').hide();
-  //$('#buttonSize').show();
+  $('.instruction').text("Choose a pattern!");
   $('#buttonWar').show();
   $('#buttonTech').show();
   //$('#buttonColor').show();
@@ -92,7 +92,7 @@ function choseTech() {
   $('#buttonTech').hide();
   $('#buttonInput').show();
   $('#lion').show();
-
+  $('.instruction').text("To end the voice and continue, correctly input the sentence you heard! Notice punctuations and capital letters");
   $('#lion').draggable();
 $('#lion').resizable();
 
@@ -104,6 +104,7 @@ document.getElementById('lion').addEventListener('click', rotate);
 }
 
 function choseWar() {
+  $('.instruction').text("To end the voice and continue, correctly input the sentence you heard! Notice punctuations and capital letters");
   $('#nuclear').show();
   $('#buttonPolitic').hide();
   $('#buttonWar').hide();
@@ -186,7 +187,7 @@ function input() {
 }
 
 function generate() {
-  $("#buttonClose").hide();
+
   var inputText = $("#myInput").val();
   $('#text').text(inputText);
   var result = inputText.localeCompare(wordAI);
@@ -194,7 +195,13 @@ function generate() {
       var result2 = inputText.localeCompare(wordWar);
   if(result==0||result1==0||result2==0){
     saying=false;
+    alert('Congraduation! You got it');
+    $('.instruction').text("Press ASDW to move the text and use your mouse to drag the images!   Click the images to rotate and you can also resize them!")
+    $("#buttonClose").hide();
+    $(buttonSize).show();
+      $(buttonColor).show();
   }
+  else{alert('oops! You failed to type the correct answer, try it again');}
 }
 
 function colorChange() {
