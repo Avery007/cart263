@@ -16,12 +16,17 @@ let imgWidth = 200;
 let drag = true;
 let rotation = 0;
 let opacity=10;
+let wordTrump='Trump is the lion king';
+let wordWar='War is good,keep fighting boy';
+let wordAI='AI is the god,you should worship him';
 let voiceParameters = {
   pitch: 0.6,
   rate: 0.6,
   volume: 10,
+  onend:speak
 }
 
+let saying=true;
 $(document).ready(setup);
 
 
@@ -36,14 +41,48 @@ function chosePolitic() {
     $('#globe').draggable();
 $('#globe').resizable();
 
-
 document.getElementById('trump').addEventListener('click', rotate);
 document.getElementById('globe').addEventListener('click', rotate);
-
+speak(wordTrump);
 
 
 }
 
+function speak(content){
+
+  if(saying==true){
+
+responsiveVoice.speak(content,'UK English Male',
+{
+  pitch: 0.6,
+  rate: 0.6,
+  volume: 10,
+  onend:function(){speak(content);}
+}
+
+);
+console.log(saying);
+
+}
+
+}
+function start(){
+$('#buttonEdit').css('display','block');
+$('#buttonStart').css('display','none');
+$('#bc').hide();
+//$('#content').show();
+}
+
+function startEdit(){
+  $('#buttonEdit').hide();
+  $('#buttonSize').show();
+  $('#buttonWar').show();
+  $('#buttonTech').show();
+  $('#buttonColor').show();
+  $('#buttonPolitic').show();
+  $('#buttonInput').show();
+
+}
 function choseTech() {
 
   $('#lion').show();
@@ -51,7 +90,7 @@ function choseTech() {
   $('#lion').draggable();
 $('#lion').resizable();
 
-
+speak(wordAI);
 document.getElementById('lion').addEventListener('click', rotate);
 //  $('#globe').draggable();
 
@@ -66,7 +105,7 @@ $('#nuclear').resizable();
 ;
 document.getElementById('nuclear').addEventListener('click', rotate);
 
-//  $('#globe').draggable();
+speak(wordWar);
 
 
 }
@@ -140,7 +179,9 @@ function generate() {
   $("#buttonClose").hide();
   var str = $("#myInput").val();
   $('#text').text(str);
-responsiveVoice.speak(str,'UK English Male',voiceParameters);
+  if(str==wordTrump||str==wordWar||wordAI){
+    saying=false;
+  }
 }
 
 function colorChange() {
