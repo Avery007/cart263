@@ -2,34 +2,28 @@
 
 /********************************************************************
 
-Title of Project
-Author Name
+Project 2
+Qingyi Deng
 
-This is a template. Fill in the title, author, and this description
-to match your project! Write JavaScript to do amazing things below!
+
 
 *********************************************************************/
-let size = 10;
-let positionX = 500;
+let size = 10; // initial size of input text
+let positionX = 500; // initial position of text
 let positionY = 100;
-let imgWidth = 200;
-let drag = true;
-let rotation = 0;
-let opacity=10;
-let wordTrump='Trump is the lion king';
-let wordWar='War is good,keep fighting boy';
-let wordAI='AI is the god,you should worship him';
-let voiceParameters = {
-  pitch: 0.6,
-  rate: 0.6,
-  volume: 10,
-  onend:speak
-}
 
-let saying=true;
+let rotation = 0; // no rotation in the beginning
+
+// the voice generated
+let wordTrump = 'Trump is the lion king';
+let wordWar = 'War is good,keep fighting boy';
+let wordAI = 'AI is the god,you should worship him';
+
+let saying = true; // used to check whether to generate voice repeatly
+
 $(document).ready(setup);
 
-
+// setup key control
 function setup() {
   document.addEventListener('keydown', moveUp);
   document.addEventListener('keydown', moveDown);
@@ -39,185 +33,229 @@ function setup() {
 
 }
 
-function chosePolitic() {
-  $('#trump').show();
-  $('#globe').show();
-  $('#buttonWar').hide();
-  $('#buttonTech').hide();
-  $('#buttonPolitic').hide();
-  $('#buttonInput').show();
-  $('#trump').draggable();
-    $('#trump').resizable();
-    $('#globe').draggable();
-$('#globe').resizable();
-$('#explain').show();
-$('#closeExplain').show();
-  $('.instruction').text("To end the voice and continue, correctly input the sentence you heard! Notice punctuations and capital letters");
-document.getElementById('trump').addEventListener('click', rotate);
-document.getElementById('globe').addEventListener('click', rotate);
-speak(wordTrump);
+
+// funcitons for key control
+function moveUp(e) {
+  if (e.keyCode === 87) {
+    positionY = positionY - 10; // move up
+    document.getElementById("text").style.top = `${positionY}px`;
+
+  }
+
+}
+// funcitons for key control
+function moveDown(e) {
+  if (e.keyCode === 83) {
+    positionY = positionY + 10; // move down
+    document.getElementById("text").style.top = `${positionY}px`;
+
+  }
+
+}
+// funcitons for key control
+function moveLeft(e) {
+  if (e.keyCode === 65) {
+    positionX = positionX - 10; //move left
+    document.getElementById("text").style.left = `${positionX}px`;
+
+  }
+
+}
+// funcitons for key control
+function moveRight(e) {
+  if (e.keyCode === 68) {
+    positionX = positionX + 10; //move right
+    document.getElementById("text").style.left = `${positionX}px`;
+
+  }
 
 
 }
 
-function speak(content){
+// function to restart
+function restart(e) {
+  if (e.keyCode === 13) { // enter key
+    location.reload(); // refresh to restart
+  }
 
-  if(saying==true){
-
-responsiveVoice.speak(content,'UK English Male',
-{
-  pitch: 0.6,
-  rate: 0.6,
-  volume: 10,
-  onend:function(){speak(content);}
-}
-
-);
-console.log(saying);
 
 }
+// to satrt the game when button is clicked
+function start() {
+  $('#buttonEdit').css('display', 'block'); // display edit button
+  $('#buttonStart').css('display', 'none'); // hide start botton
+  $('#bc').hide(); // hide cover image
 
 }
-function start(){
-$('#buttonEdit').css('display','block');
-$('#buttonStart').css('display','none');
-$('#bc').hide();
-//$('#content').show();
-}
 
-function startEdit(){
-  $('#buttonEdit').hide();
-  $('.instruction').text("Choose a pattern!");
+// enable edit
+function startEdit() {
+  $('#buttonEdit').hide(); //hide button
+  $('.instruction').text("Choose a pattern!"); // display instruction
+  // display three buttons as  different pattern
   $('#buttonWar').show();
   $('#buttonTech').show();
-  //$('#buttonColor').show();
   $('#buttonPolitic').show();
 
 }
+
+//  pattern 1
+function chosePolitic() {
+
+  //display images and input button
+  $('#trump').show();
+  $('#globe').show();
+  $('#buttonInput').show();
+  // hide other choice of patterns
+  $('#buttonWar').hide();
+  $('#buttonTech').hide();
+  $('#buttonPolitic').hide();
+
+  // make images draggable and resizable
+  $('#trump').draggable();
+  $('#trump').resizable();
+  $('#globe').draggable();
+  $('#globe').resizable();
+
+  // display instruction images and its control button
+  $('#explain').show();
+  $('#closeExplain').show();
+
+  // display intruction tex
+  $('.instruction').text("To end the voice and continue, correctly input the sentence you heard! Notice punctuations and capital letters");
+
+  // allow players to rotate the images by clicking on them
+  document.getElementById('trump').addEventListener('click', rotate);
+  document.getElementById('globe').addEventListener('click', rotate);
+  // generate voice related
+  speak(wordTrump);
+
+}
+
+// voice generate fucntion
+function speak(content) {
+
+  if (saying == true) { // when true repeat it
+
+    responsiveVoice.speak(content, 'UK English Male', {
+      pitch: 0.6,
+      rate: 0.6,
+      volume: 10,
+      onend: function() {
+        speak(content);
+      } // call to repeat
+    });
+
+  }
+
+}
+
+// chose pattern 2
 function choseTech() {
+
+  // hide other choices
   $('#buttonPolitic').hide();
   $('#buttonWar').hide();
   $('#buttonTech').hide();
+
+  //display images and buttons
   $('#buttonInput').show();
   $('#lion').show();
   $('#explain').show();
   $('#closeExplain').show();
+  // display text instruction
   $('.instruction').text("To end the voice and continue, correctly input the sentence you heard! Notice punctuations and capital letters");
+  // make images draggable and resizable
   $('#lion').draggable();
-$('#lion').resizable();
+  $('#lion').resizable();
 
-speak(wordAI);
-document.getElementById('lion').addEventListener('click', rotate);
-//  $('#globe').draggable();
+  // call voice generate function
+  speak(wordAI);
 
+  // allow to rotate
+  document.getElementById('lion').addEventListener('click', rotate);
 
 }
 
+
+// choise 3
 function choseWar() {
+
+  // display texts and buttons
   $('.instruction').text("To end the voice and continue, correctly input the sentence you heard! Notice punctuations and capital letters");
   $('#nuclear').show();
+  $('#buttonInput').show();
+  $('#explain').show();
+  $('#closeExplain').show();
+
+  //hide texts and buttons
   $('#buttonPolitic').hide();
   $('#buttonWar').hide();
   $('#buttonTech').hide();
-  $('#buttonInput').show();
+
+  // make elements draggable and resizable
   $('#nuclear').draggable();
-$('#nuclear').resizable();
-$('#explain').show();
-$('#closeExplain').show();
-document.getElementById('nuclear').addEventListener('click', rotate);
+  $('#nuclear').resizable();
 
-speak(wordWar);
+  // allow to rotate
+  document.getElementById('nuclear').addEventListener('click', rotate);
 
+  // call voice generate function
+  speak(wordWar);
 
 }
 
+
+// rotate fucntion
 function rotate(e) {
 
   rotation = rotation + 5;
   e.target.style.transform = `rotate(${rotation}deg)`;
 
 }
-//function opacityChange() {
 
-  //opacity = opacity-1;
-
-//document.getElementById("trump").style.opacity= `${opacity}`;
-
-//}
-
-
-function moveUp(e) {
-  if (e.keyCode === 87) {
-    positionY = positionY - 10;
-    document.getElementById("text").style.top = `${positionY}px`;
-
-  }
-
-}
-
-function moveDown(e) {
-  if (e.keyCode === 83) {
-    positionY = positionY + 10;
-    document.getElementById("text").style.top = `${positionY}px`;
-
-  }
-
-}
-
-function moveLeft(e) {
-  if (e.keyCode === 65) {
-    positionX = positionX - 10;
-    document.getElementById("text").style.left = `${positionX}px`;
-
-  }
-
-}
-
-function moveRight(e) {
-  if (e.keyCode === 68) {
-    positionX = positionX + 10;
-    document.getElementById("text").style.left = `${positionX}px`;
-
-  }
-
-
-}
-
-function restart(e) {
-  if (e.keyCode === 13) {
-      location.reload(); // refresh to restart
-  }
-
-
-}
+// allow input text
 function input() {
+
+  //display input box and hide the input button
   $("#myInput").show();
   $("#buttonClose").show();
   $("#buttonInput").hide();
 
 }
 
+// check input and react
 function generate() {
 
   var inputText = $("#myInput").val();
-  $('#text').text(inputText);
+  $('#text').text(inputText); //display input
+
+  //compare input with correct answer which the voice says
   var result = inputText.localeCompare(wordAI);
-    var result1 = inputText.localeCompare(wordTrump);
-      var result2 = inputText.localeCompare(wordWar);
-  if(result==0||result1==0||result2==0){
-    saying=false;
-    alert('Congraduation! You got it');
+  var result1 = inputText.localeCompare(wordTrump);
+  var result2 = inputText.localeCompare(wordWar);
+  if (result == 0 || result1 == 0 || result2 == 0) { // 0 represent equal
+    saying = false; // change tracking value so it no long repeats
+
+    // display texts and new buttons
+    alert('Congradulation! You got it');
     $('.instruction').text("Press ASDW to move the text")
-    $("#buttonClose").hide();
-    $("#myInput").hide();
     $(buttonSmaller).show();
     $(buttonBigger).show();
-      $(buttonColor).show();
-      $(intheEnd).show();
+    $(buttonColor).show();
+    $(intheEnd).show();
+    // hide input box and button
+    $("#buttonClose").hide();
+    $("#myInput").hide();
   }
-  else{alert('oops! You failed to type the correct answer, try it again');}
+  // if it is not correct, ask the player to do it again
+  else {
+    alert('oops! You failed to type the correct answer, try it again');
+  }
 }
 
+
+// change text color randomly
 function colorChange() {
 
   let r = Math.floor(Math.random() * 255);
@@ -228,45 +266,41 @@ function colorChange() {
 
 }
 
-
+//change text size
 function sizeBigger() {
 
-
-  size = size + 5;
+  size = size + 5; // make it bigger
   document.getElementById("text").style.fontSize = `${size}px`;
-  console.log(size);
-  //Change the background color of the element to random color
-  //theSize.style.fontSize='25px';
 
 }
 
+//make text smaller
 function sizeSmaller() {
 
-
-  if(size>5){size = size - 5;
-  document.getElementById("text").style.fontSize = `${size}px`;
-}
-  //Change the background color of the element to random color
-  //theSize.style.fontSize='25px';
+  if (size > 5) {
+    size = size - 5;
+    document.getElementById("text").style.fontSize = `${size}px`;
+  }
 
 }
 
-function closeExplain(){
+// hide the crocodile image instruciton when button is clicked
+function closeExplain() {
 
-    $('#explain').hide();
-    $('#closeExplain').hide();
+  $('#explain').hide();
+  $('#closeExplain').hide();
 }
 
-function finished(){
-   $('.buttonClass').hide();
-   $('.instruction').text("Press ENTER to restart");
+// when players finish
+function finished() {
+  $('.buttonClass').hide(); // hide all the button
+  $('.instruction').text("Press ENTER to restart"); // change instruciton
+  // generate a new voice
+  responsiveVoice.speak("Congratulations good kid,you have made it. You must enjoy your new memory", 'UK English Male', {
+    pitch: 0.6,
+    rate: 0.6,
+    volume: 10,
 
-   responsiveVoice.speak("Congratulations good kid,you have made it. You must enjoy your new memory",'UK English Male',
-   {
-     pitch: 0.6,
-     rate: 0.6,
-     volume: 10,
-
-   });
+  });
 
 }

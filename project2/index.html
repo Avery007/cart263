@@ -1,75 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
-    <!-- CSS stylesheet(s) -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
-    <!-- jQuery and jQuery UI -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
+  <!-- CSS stylesheet(s) -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  <!-- jQuery and jQuery UI -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 
   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 
-<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-      crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
 
-    <!-- Library script(s) -->
-    <!-- Add your required libraries here either as local files or CDN-hosted files -->
+  <!-- Library script(s) -->
+  <!-- Add your required libraries here either as local files or CDN-hosted files -->
 
 
-    <!-- My script(s) -->
-    <script src="js/script.js"></script>
-  </head>
+  <!-- My script(s) -->
+  <script src="js/script.js"></script>
+</head>
 
-  <body>
-<div id="content"> <img src="./assets/images/original.jpg"  width="900" height="500" ></div>
-<img id="bc" src="./assets/images/bc1.jpg">
-<button id="buttonInput" class="buttonClass" onclick="input()"> Input</button>
-<button id="buttonClose" class="buttonClass" onclick="generate()"> Check</button>
-<button id="buttonColor" class="buttonClass" onclick="colorChange()"> Change Color</button>
-<button id="buttonBigger" class="buttonClass" onclick="sizeBigger()"> Bigger</button>
-<button id="buttonPolitic" class="buttonClass" onclick="chosePolitic()"> Politics</button>
-<button id="buttonTech" class="buttonClass" onclick="choseTech()">Tech</button>
-<button id="buttonWar" class="buttonClass" onclick="choseWar()">Power</button>
-<button id="buttonStart" class="buttonClass" onclick="start()">Start</button>
-<button id="buttonSmaller" class="buttonClass" onclick="sizeSmaller()">Smaller</button>
-<button id="buttonEdit" class="buttonClass" onclick="startEdit()">Edit the image</button>
-<button id="closeExplain" class="buttonClass" onclick="closeExplain()"> Okey!</button>
-<button id="intheEnd" class="buttonClass" onclick="finished()"> Finish!</button>
+<body>
 
-<div id="trump" width="250" height="100">
-<img style="width:100%; height:100%" src="./assets/images/trump.png">
-</div>
-<img id="explain" src="./assets/images/crocodile.jpg" width="300" height="150">
-<div id="globe"  width="100" height="20">
- <img style="width:100%; height:100%" src="./assets/images/globe.png" >
-</div>
+  <div id="content"> <img src="./assets/images/original.jpg" width="900" height="500"></div>
+  <img id="bc" src="./assets/images/bc1.jpg">
+  <button id="buttonInput" class="buttonClass" onclick="input()"> Input</button>
+  <button id="buttonClose" class="buttonClass" onclick="generate()"> Check</button>
+  <button id="buttonColor" class="buttonClass" onclick="colorChange()"> Change Color</button>
+  <button id="buttonBigger" class="buttonClass" onclick="sizeBigger()"> Bigger</button>
+  <button id="buttonPolitic" class="buttonClass" onclick="chosePolitic()"> Politics</button>
+  <button id="buttonTech" class="buttonClass" onclick="choseTech()">Tech</button>
+  <button id="buttonWar" class="buttonClass" onclick="choseWar()">Braveness</button>
+  <button id="buttonStart" class="buttonClass" onclick="start()">Start</button>
+  <button id="buttonSmaller" class="buttonClass" onclick="sizeSmaller()">Smaller</button>
+  <button id="buttonEdit" class="buttonClass" onclick="startEdit()">Edit the image</button>
+  <button id="closeExplain" class="buttonClass" onclick="closeExplain()"> Okey!</button>
+  <button id="intheEnd" class="buttonClass" onclick="finished()"> Finish!</button>
 
-<div id="lion"  width="650" height="500">
-  <img style="width:100%; height:100%" src="./assets/images/lion.png">
-</div>
+  <div id="trump" width="250" height="100">
+    <img style="width:100%; height:100%" src="./assets/images/trump.png">
+  </div>
+  <img id="explain" src="./assets/images/crocodile.jpg" width="300" height="150">
+  <div id="globe" width="100" height="20">
+    <img style="width:100%; height:100%" src="./assets/images/globe.png">
+  </div>
 
-<div id="nuclear" width="250" height="100">
-  <img style="width:100%; height:100%" src="./assets/images/nuclear.png">
-</div>
-<div id="text" ></div>
- <input type="text" id="myInput">
+  <div id="lion" width="650" height="500">
+    <img style="width:100%; height:100%" src="./assets/images/lion.png">
+  </div>
 
- <div class="instruction">Hey! You must heard the story Lion King before right? It is so classic!
-   But now we are going to add something new. Are you a creatvie genius? Try it!</div>
+  <div id="nuclear" width="250" height="100">
+    <img style="width:100%; height:100%" src="./assets/images/nuclear.png">
+  </div>
+
+  <input type="text" id="myInput">
+
+  <div class="instruction">Hey! You must heard the story Lion King before right? It is so classic!
+    But now we are going to add something new. Are you a creatvie genius? Try it!</div>
 
 
-  </body>
+</body>
 
 </html>
