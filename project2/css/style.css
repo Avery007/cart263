@@ -11,6 +11,14 @@
 
 }
 
+#explain{
+  position:absolute;
+  top:0px;
+  right:0px;
+ display:none;
+z-index: 11;
+
+}
 #bc{
       position:absolute;
       top:0px;
@@ -43,7 +51,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #buttonInput{
@@ -66,6 +74,17 @@
 
 }
 
+#intheEnd{
+  position: absolute;
+  top: 300px;
+  left: 100px;
+  z-index: 6;
+  display: none;
+
+}
+
+
+
 #text{
   position: absolute;
   top: 100px;
@@ -81,9 +100,9 @@
 #buttonColor{
   position: absolute;
   top: 70vh;
-  left: 10px;
+  left: 5px;
   z-index: 7;
-  font-size:10px;
+
   display:none;
 
 
@@ -94,7 +113,6 @@
   top: 400px;
   left: 200px;
   z-index: 7;
-  font-size:10px;
    display:none;
 
 }
@@ -115,24 +133,40 @@ display:none;
   z-index: 7;
 display:none;
 }
-#buttonSize{
+#buttonBigger{
   position: absolute;
   top: 70vh;
   left: 120px;
   z-index: 7;
 display:none;
-  font-size:10px;
+
 
 
 }
 
+#buttonSmaller{
+  position: absolute;
+  top: 70vh;
+  left: 195px;
+z-index: 7;
+display: none;
+}
 
 
 #buttonStart{
   position: absolute;
-  top: 500px;
-  right: 350px;
+  top: 200px;
+  left:200px;
   z-index: 10;
+
+}
+
+#closeExplain{
+  position: absolute;
+  top: 0px;
+  right:0px;
+  z-index: 12;
+  display:none;
 
 }
 #buttonEdit{
@@ -151,13 +185,6 @@ z-index: 7;
 display: none;
 }
 
-#lion1{
-  position: absolute;
-   top: 170px;
-   left: 250px;
-z-index: 7;
-display: none;
-}
 
 #lion{
   position: absolute;

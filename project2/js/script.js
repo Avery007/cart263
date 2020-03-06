@@ -30,7 +30,14 @@ let saying=true;
 $(document).ready(setup);
 
 
+function setup() {
+  document.addEventListener('keydown', moveUp);
+  document.addEventListener('keydown', moveDown);
+  document.addEventListener('keydown', moveLeft);
+  document.addEventListener('keydown', moveRight);
+  document.addEventListener('keydown', restart);
 
+}
 
 function chosePolitic() {
   $('#trump').show();
@@ -43,6 +50,8 @@ function chosePolitic() {
     $('#trump').resizable();
     $('#globe').draggable();
 $('#globe').resizable();
+$('#explain').show();
+$('#closeExplain').show();
   $('.instruction').text("To end the voice and continue, correctly input the sentence you heard! Notice punctuations and capital letters");
 document.getElementById('trump').addEventListener('click', rotate);
 document.getElementById('globe').addEventListener('click', rotate);
@@ -83,7 +92,6 @@ function startEdit(){
   $('#buttonTech').show();
   //$('#buttonColor').show();
   $('#buttonPolitic').show();
-  //$('#buttonInput').show();
 
 }
 function choseTech() {
@@ -92,6 +100,8 @@ function choseTech() {
   $('#buttonTech').hide();
   $('#buttonInput').show();
   $('#lion').show();
+  $('#explain').show();
+  $('#closeExplain').show();
   $('.instruction').text("To end the voice and continue, correctly input the sentence you heard! Notice punctuations and capital letters");
   $('#lion').draggable();
 $('#lion').resizable();
@@ -112,7 +122,8 @@ function choseWar() {
   $('#buttonInput').show();
   $('#nuclear').draggable();
 $('#nuclear').resizable();
-;
+$('#explain').show();
+$('#closeExplain').show();
 document.getElementById('nuclear').addEventListener('click', rotate);
 
 speak(wordWar);
@@ -133,14 +144,7 @@ function rotate(e) {
 //document.getElementById("trump").style.opacity= `${opacity}`;
 
 //}
-function setup() {
-  document.addEventListener('keydown', moveUp);
-  document.addEventListener('keydown', moveDown);
-  document.addEventListener('keydown', moveLeft);
-  document.addEventListener('keydown', moveRight);
 
-
-}
 
 function moveUp(e) {
   if (e.keyCode === 87) {
@@ -179,6 +183,13 @@ function moveRight(e) {
 
 }
 
+function restart(e) {
+  if (e.keyCode === 13) {
+      location.reload(); // refresh to restart
+  }
+
+
+}
 function input() {
   $("#myInput").show();
   $("#buttonClose").show();
@@ -196,10 +207,13 @@ function generate() {
   if(result==0||result1==0||result2==0){
     saying=false;
     alert('Congraduation! You got it');
-    $('.instruction').text("Press ASDW to move the text and use your mouse to drag the images!   Click the images to rotate and you can also resize them!")
+    $('.instruction').text("Press ASDW to move the text")
     $("#buttonClose").hide();
-    $(buttonSize).show();
+    $("#myInput").hide();
+    $(buttonSmaller).show();
+    $(buttonBigger).show();
       $(buttonColor).show();
+      $(intheEnd).show();
   }
   else{alert('oops! You failed to type the correct answer, try it again');}
 }
@@ -215,7 +229,7 @@ function colorChange() {
 }
 
 
-function sizeChange() {
+function sizeBigger() {
 
 
   size = size + 5;
@@ -223,5 +237,36 @@ function sizeChange() {
   console.log(size);
   //Change the background color of the element to random color
   //theSize.style.fontSize='25px';
+
+}
+
+function sizeSmaller() {
+
+
+  if(size>5){size = size - 5;
+  document.getElementById("text").style.fontSize = `${size}px`;
+}
+  //Change the background color of the element to random color
+  //theSize.style.fontSize='25px';
+
+}
+
+function closeExplain(){
+
+    $('#explain').hide();
+    $('#closeExplain').hide();
+}
+
+function finished(){
+   $('.buttonClass').hide();
+   $('.instruction').text("Press ENTER to restart");
+
+   responsiveVoice.speak("Congratulations good kid,you have made it. You must enjoy your new memory",'UK English Male',
+   {
+     pitch: 0.6,
+     rate: 0.6,
+     volume: 10,
+
+   });
 
 }
