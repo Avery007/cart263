@@ -2,7 +2,7 @@ This project aims to reveal the dark side of Internet based on the given article
 It is noticeable that today's network environment is filled with negative information, which might be harmful to our psychological health, especially for kids who don’t have enough ability to discern these contents.In this work I tried to create an uncomfortable experience which resembles some of the issues online.
 
 The basic idea of this work is about manipulation of cartoon images that will insert undesirable message related to political agenda, violent and artificial intelligence. 
-When players enter the editing mode, they are able to drag the images and change size, rotate them. While there will be voice repeatly saying the exactly same sentence which is pretty annoying. I intently make them feel like this way. So it is kind of like a mind-brushing.
+When players enter the editing mode, they are able to drag the images and change size, rotate them. While there will be voice repeatly saying the exactly same sentence which is pretty annoying. I intently make them feel like this way. So it is kind of like a mind-brushing process.
 
 I also hope to use this design to represent what we often experience in today’s network, there are many uncomfortable information like advertisements or negative pictures keep popping in when we are surfing the internet. And it is very hard to get rid of them.
 
