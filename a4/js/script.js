@@ -45,10 +45,12 @@ function gotData(data) {
   let condiment = getRandomElement(data.condiments);
   // Assume it's singular
   let verb = 'is';
+  let noun =  'scent'
   // Check if the last latter of the condiment is an 's'
   if (condiment.charAt(condiment.length - 1) === 's') {
     // If so, assume it's plural (this is a flawed assumption)
     verb = 'are';
+    noun='scents';
   }
 
   // Now the cat
@@ -57,10 +59,14 @@ function gotData(data) {
   // Same again for room
   let room = getRandomElement(data.rooms);
 
+  let fruit=getRandomElement(data.fruits);
+  let name=getRandomElement(data.names);
+  let spice=getRandomElement(data.spices);
+
   // Now we can construct our description with a template string
   // We have the basic structure of a sentence and we substitute in the
   // values we've just calculated
-  let description = `${condiment} ${verb} like a ${cat} in a ${room}.`;
+  let description = `${name} once said that the ${noun} of ${condiment} ${verb} like a  ${cat} eating ${fruit} with ${spice} in a ${room}.`;
 
   // Finally, we add it to the page and hey presto!
   $('body').append(description)
