@@ -307,5 +307,432 @@
     "XO sauce",
     "Za'atar",
     "Zacuscă"
-  ]
+  ],
+
+  "rabbits":
+     [
+       "American",
+       "American Chinchilla",
+       "American Fuzzy Lop",
+       "American Sable",
+       "Argente Brun",
+       "Belgian Hare",
+       "Beveren",
+       "Blance de Hotot",
+       "Britannia Petite",
+       "Californian",
+       "Champagne D'argent",
+       "Checkered Giant",
+       "Cinnamon",
+       "Creme D'argent",
+       "Dutch",
+       "Dwarf Hotot",
+       "English Angora",
+       "English Lop",
+       "English Spot",
+       "Flemish Giant",
+       "Florida White",
+       "French Angora",
+       "French Lop",
+       "Giant Angora",
+       "Giant Chinchilla",
+       "Harlequin",
+       "Havana",
+       "Himalayan",
+       "Holland Lop",
+       "Jersey Wooly",
+       "Lilac",
+       "Lionhead",
+       "Mini Lop",
+       "Mini Rex",
+       "Mini Satin",
+       "Netherland Dwarf",
+       "New Zealand",
+       "Palomino",
+       "Polish",
+       "Rex",
+       "Rhinelander",
+       "Satin",
+       "Satin Angora",
+       "Silver",
+       "Silver Fox",
+       "Silver Marten",
+       "Standard Chinchilla",
+       "Tan",
+       "Thrianta"
+     ],
+
+     "colors": [
+         {
+             "color": "Almond",
+             "hex": "#EFDECD"
+         },
+         {
+             "color": "Antique Brass",
+             "hex": "#CD9575"
+         },
+         {
+             "color": "Apricot",
+             "hex": "#FDD9B5"
+         },
+         {
+             "color": "Aquamarine",
+             "hex": "#78DBE2"
+         },
+         {
+             "color": "Asparagus",
+             "hex": "#87A96B"
+         },
+         {
+             "color": "Atomic Tangerine",
+             "hex": "#FFA474"
+         },
+         {
+             "color": "Banana Mania",
+             "hex": "#FAE7B5"
+         },
+         {
+             "color": "Beaver",
+             "hex": "#9F8170"
+         },
+         {
+             "color": "Bittersweet",
+             "hex": "#FD7C6E"
+         },
+         {
+             "color": "Black",
+             "hex": "#000000"
+         },
+         {
+             "color": "Blue",
+             "hex": "#1F75FE"
+         },
+         {
+             "color": "Blue Bell",
+             "hex": "#A2A2D0"
+         },
+         {
+             "color": "Blue Green",
+             "hex": "#0D98BA"
+         },
+         {
+             "color": "Blue Violet",
+             "hex": "#7366BD"
+         },
+         {
+             "color": "Blush",
+             "hex": "#DE5D83"
+         },
+         {
+             "color": "Brick Red",
+             "hex": "#CB4154"
+         },
+         {
+             "color": "Brown",
+             "hex": "#B4674D"
+         },
+         {
+             "color": "Burnt Orange",
+             "hex": "#FF7F49"
+         },
+         {
+             "color": "Burnt Sienna",
+             "hex": "#EA7E5D"
+         },
+         {
+             "color": "Cadet Blue",
+             "hex": "#B0B7C6"
+         },
+         {
+             "color": "Canary",
+             "hex": "#FFFF99"
+         },
+         {
+             "color": "Caribbean Green",
+             "hex": "#00CC99"
+         },
+         {
+             "color": "Carnation Pink",
+             "hex": "#FFAACC"
+         },
+         {
+             "color": "Cerise",
+             "hex": "#DD4492"
+         },
+         {
+             "color": "Cerulean",
+             "hex": "#1DACD6"
+         },
+         {
+             "color": "Chestnut",
+             "hex": "#BC5D58"
+         },
+         {
+             "color": "Copper",
+             "hex": "#DD9475"
+         },
+         {
+             "color": "Cornflower",
+             "hex": "#9ACEEB"
+         },
+         {
+             "color": "Cotton Candy",
+             "hex": "#FFBCD9"
+         },
+         {
+             "color": "Dandelion",
+             "hex": "#FDDB6D"
+         },
+         {
+             "color": "Denim",
+             "hex": "#2B6CC4"
+         },
+         {
+             "color": "Desert Sand",
+             "hex": "#EFCDB8"
+         },
+         {
+             "color": "Eggplant",
+             "hex": "#6E5160"
+         },
+         {
+             "color": "Electric Lime",
+             "hex": "#CEFF1D"
+         },
+         {
+             "color": "Fern",
+             "hex": "#71BC78"
+         },
+         {
+             "color": "Forest Green",
+             "hex": "#6DAE81"
+         },
+         {
+             "color": "Fuchsia",
+             "hex": "#C364C5"
+         },
+         {
+             "color": "Fuzzy Wuzzy",
+             "hex": "#CC6666"
+         },
+         {
+             "color": "Gold",
+             "hex": "#E7C697"
+         },
+         {
+             "color": "Goldenrod",
+             "hex": "#FCD975"
+         },
+         {
+             "color": "Granny Smith Apple",
+             "hex": "#A8E4A0"
+         },
+         {
+             "color": "Gray",
+             "hex": "#95918C"
+         },
+         {
+             "color": "Green",
+             "hex": "#1CAC78"
+         },
+         {
+             "color": "Green Yellow",
+             "hex": "#F0E891"
+         },
+         {
+             "color": "Hot Magenta",
+             "hex": "#FF1DCE"
+         },
+         {
+             "color": "Inchworm",
+             "hex": "#B2EC5D"
+         },
+         {
+             "color": "Indigo",
+             "hex": "#5D76CB"
+         },
+         {
+             "color": "Jazzberry Jam",
+             "hex": "#CA3767"
+         },
+         {
+             "color": "Jungle Green",
+             "hex": "#3BB08F"
+         },
+         {
+             "color": "Laser Lemon",
+             "hex": "#FEFE22"
+         },
+         {
+             "color": "Lavender",
+             "hex": "#FCB4D5"
+         },
+         {
+             "color": "Macaroni and Cheese",
+             "hex": "#FFBD88"
+         },
+         {
+             "color": "Magenta",
+             "hex": "#F664AF"
+         },
+         {
+             "color": "Mahogany",
+             "hex": "#CD4A4C"
+         },
+         {
+             "color": "Manatee",
+             "hex": "#979AAA"
+         },
+         {
+             "color": "Mango Tango",
+             "hex": "#FF8243"
+         },
+         {
+             "color": "Maroon",
+             "hex": "#C8385A"
+         },
+         {
+             "color": "Mauvelous",
+             "hex": "#EF98AA"
+         },
+         {
+             "color": "Melon",
+             "hex": "#FDBCB4"
+         },
+         {
+             "color": "Midnight Blue",
+             "hex": "#1A4876"
+         },
+         {
+             "color": "Mountain Meadow",
+             "hex": "#30BA8F"
+         },
+         {
+             "color": "Navy Blue",
+             "hex": "#1974D2"
+         },
+         {
+             "color": "Neon Carrot",
+             "hex": "#FFA343"
+         },
+         {
+             "color": "Olive Green",
+             "hex": "#BAB86C"
+         },
+         {
+             "color": "Orange",
+             "hex": "#FF7538"
+         },
+         {
+             "color": "Orchid",
+             "hex": "#E6A8D7"
+         },
+         {
+             "color": "Outer Space",
+             "hex": "#414A4C"
+         },
+         {
+             "color": "Outrageous Orange",
+             "hex": "#FF6E4A"
+         },
+         {
+             "color": "Pacific Blue",
+             "hex": "#1CA9C9"
+         },
+         {
+             "color": "Peach",
+             "hex": "#FFCFAB"
+         },
+  ],
+         "spices": [
+         		"Aonori",
+         		"Ajwain",
+         		"Allspice",
+         		"Amchoor",
+         		"Anise",
+         		"Star Anise",
+         		"Asafoetida",
+         		"Camphor",
+         		"Caraway",
+         		"Cardamom",
+         		"Black Cardamom",
+         		"Cassia",
+         		"Celery powder",
+         		"Celery seed",
+         		"Charoli",
+         		"Chenpi",
+         		"Cinnamon",
+         		"Clove",
+         		"Coriander seed",
+         		"Cubeb",
+         		"Cumin",
+         		"Nigella sativa",
+         		"Bunium persicum",
+         		"Dill",
+         		"Dill seed",
+         		"Fennel",
+         		"Fenugreek",
+         		"Fingerroot",
+         		"Greater Galangal",
+         		"Lesser Galangal",
+         		"Garlic",
+         		"Ginger",
+         		"Aromatic Ginger",
+         		"Golpar",
+         		"Grains of Paradise",
+         		"Grains of Selim",
+         		"Horseradish",
+         		"Juniper berry",
+         		"Kokum",
+         		"Korarima",
+         		"Dried Lime",
+         		"Liquorice",
+         		"Litsea cubeba",
+         		"Mace",
+         		"Mango-ginger",
+         		"Mastic",
+         		"Mahlab",
+         		"Black Mustard",
+         		"Brown Mustard",
+         		"White Mustard",
+         		"Nigella",
+         		"Njangsa",
+         		"Nutmeg",
+         		"Alligator Pepper",
+         		"Brazilian Pepper",
+         		"Chili Pepper",
+         		"Cayenne pepper",
+         		"Paprika",
+         		"Long Pepper",
+         		"Peruvian Pepper",
+         		"East Asian Pepper",
+         		"Sichuan Pepper",
+         		"Sansho",
+         		"Tasmanian Pepper",
+         		"Black Peppercorn",
+         		"Green Peppercorn",
+         		"White Peppercorn",
+         		"Pomegranate seed",
+         		"Poppy seed",
+         		"Radhuni",
+         		"Rose",
+         		"Saffron",
+         		"Salt",
+         		"Sarsaparilla",
+         		"Sassafras",
+         		"Sesame",
+         		"Shiso",
+         		"Sumac",
+         		"Tamarind",
+         		"Tonka bean",
+         		"Turmeric",
+         		"Uzazi",
+         		"Vanilla",
+         		"Voatsiperifery",
+         		"Wasabi",
+         		"Yuzu",
+         		"Zedoary",
+         		"Zereshk",
+         		"Zest"
+         	],
 }
