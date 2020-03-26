@@ -56,9 +56,17 @@ function gotData(data) {
   // Now the cat
   let cat = getRandomElement(data.cats);
 
+  // chech the correct article
+  let article='a';
+  if (cat.charAt(0) === 'A' || cat.charAt(0) === 'E' || cat.charAt(0) === 'I' || cat.charAt(0) === 'O'|| cat.charAt(0) === 'U') {
+    article = 'an';
+  }
+  else{article='a'};
+
   // Same again for room
   let room = getRandomElement(data.rooms);
 
+  // added elements
   let fruit=getRandomElement(data.fruits);
   let name=getRandomElement(data.names);
   let spice=getRandomElement(data.spices);
@@ -66,7 +74,8 @@ function gotData(data) {
   // Now we can construct our description with a template string
   // We have the basic structure of a sentence and we substitute in the
   // values we've just calculated
-  let description = `${name} once said that the ${noun} of ${condiment} ${verb} like a  ${cat} eating ${fruit} with ${spice} in a ${room}.`;
+  // try to make the sentence meaningful
+  let description = `${name} once said that the ${noun} of ${condiment} ${verb} like ${article} ${cat} eating ${fruit} with ${spice} in the ${room}.`;
 
   // Finally, we add it to the page and hey presto!
   $('body').append(description)
