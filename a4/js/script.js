@@ -26,6 +26,11 @@ $(document).ready(function() {
     .fail(dataError);
 });
 
+
+// refresh the page while clicking on the page
+$(document).click(function() {
+    location.reload(true);
+  });
 // gotData (data)
 //
 // This function gets called by getJSON when the data has been loaded.
