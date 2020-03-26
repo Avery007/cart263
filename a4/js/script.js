@@ -1,7 +1,7 @@
 /*
 
 Condiments
-Pippin Barr
+Avery Deng
 
 Chooses random words from local JSON data to fill out a sentence
 describing a condiment based on cats and rooms... weird.
@@ -29,8 +29,8 @@ $(document).ready(function() {
 
 // refresh the page while clicking on the page
 $(document).click(function() {
-    location.reload(true);
-  });
+  location.reload(true);
+});
 // gotData (data)
 //
 // This function gets called by getJSON when the data has been loaded.
@@ -45,31 +45,32 @@ function gotData(data) {
   let condiment = getRandomElement(data.condiments);
   // Assume it's singular
   let verb = 'is';
-  let noun =  'scent'
+  let noun = 'scent'
   // Check if the last latter of the condiment is an 's'
   if (condiment.charAt(condiment.length - 1) === 's') {
     // If so, assume it's plural (this is a flawed assumption)
     verb = 'are';
-    noun='scents';
+    noun = 'scents';
   }
 
   // Now the cat
   let cat = getRandomElement(data.cats);
 
   // chech the correct article
-  let article='a';
-  if (cat.charAt(0) === 'A' || cat.charAt(0) === 'E' || cat.charAt(0) === 'I' || cat.charAt(0) === 'O'|| cat.charAt(0) === 'U') {
+  let article = 'a';
+  if (cat.charAt(0) === 'A' || cat.charAt(0) === 'E' || cat.charAt(0) === 'I' || cat.charAt(0) === 'O' || cat.charAt(0) === 'U') {
     article = 'an';
-  }
-  else{article='a'};
+  } else {
+    article = 'a'
+  };
 
   // Same again for room
   let room = getRandomElement(data.rooms);
 
   // added elements
-  let fruit=getRandomElement(data.fruits);
-  let name=getRandomElement(data.names);
-  let spice=getRandomElement(data.spices);
+  let fruit = getRandomElement(data.fruits);
+  let name = getRandomElement(data.names);
+  let spice = getRandomElement(data.spices);
 
   // Now we can construct our description with a template string
   // We have the basic structure of a sentence and we substitute in the
