@@ -642,7 +642,7 @@
          {
              "color": "Peach",
              "hex": "#FFCFAB"
-         },
+         }
   ],
          "spices": [
          		"Aonori",
@@ -734,5 +734,5 @@
          		"Zedoary",
          		"Zereshk",
          		"Zest"
-         	],
+         	]
 }
