@@ -14,5 +14,12 @@ $(document).ready(setup);
 
 
 function setup() {
+  responsiveVoice.speak("Welcome to the year 2030", 'UK English Male', {
+    pitch: 0.6,
+    rate: 0.6,
+    volume: 10,
+
+  });
+
 
 }
