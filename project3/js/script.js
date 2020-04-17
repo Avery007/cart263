@@ -12,6 +12,16 @@ to match your project! Write JavaScript to do amazing things below!
 let voice1="sellphone is the best entertainment";
 let voice2="sellphone is the best beauty";
 let voice3="we cannot live without sellphone";
+let fruit = [
+  "apple",
+  "pear",
+  "banana",
+  "strawberry",
+  "watermelon",
+  "kiwi",
+
+]
+
 $(document).ready(setup);
 
 
@@ -24,34 +34,71 @@ function setup() {
   });
 
 
-enterScreen($('#screen2'),voice2);
-enterScreen($('#screen3'),voice3);
-enterScreen($('#screen4'),voice4);
+enterScreen('#screen2',$("#buttonShop"));
+enterScreen('#screen3',$("#buttonShop"));
+//enterScreen($('#screen3'),voice3);
+
 }
 
-function enterScreen(screen,voice){
-screen.mouseover(
-  function() {screen.css('width','95vw');
-              screen.css('height','90vh');
-            screen.css('zIndex','2');
-             responsiveVoice.speak(voice, 'UK English Male', {
-                pitch: 5,
-                rate: 1,
-                volume: 10,
-
-              });
-
-
-});
-
-screen.mouseleave(
-  function() {screen.css('width','10vw');
-              screen.css('height','10vh');
-              screen.css('zIndex','1');
-
+function enterScreen(screen,button){
+$(screen).mouseover(
+  function() {$(screen).css('width','40vw');
+              $(screen).css('height','40vh');
+             $(screen).css('zIndex','3');
+             $('#backColor').show();
+             button.show();
+             button.position({
+                           my: "center",
+                           at: "center",
+                           of: screen
+                           });
 
 
 });
 
 
+
+
+  $(screen).click(function () {
+              $('#backColor').hide();
+              $(screen).css('width','10vw');
+            $(screen).css('height','10vh');
+              $(screen).css('zIndex','1');
+             button.hide();
+});
+
+
+
+}
+//function deliver(){
+  //$("#screen1").position({
+                //my: "center",
+                //at: "center",
+                //of: "#screen4"
+             //});
+
+
+//}
+
+
+  function showFruit() {
+    responsiveVoice.speak("Welcome you got it", 'UK English Male', {
+      pitch: 0.6,
+      rate: 0.6,
+      volume: 10,
+
+    });
+
+}
+
+function stuff(){
+  console.log(inputText);
+var inputText = $("#myInput").val();
+var inputNumber = $("#number").val();
+$('#explain').text(inputNumber); //display input
+
+}
+
+function shopping(){
+  $('#shopping').show();
 }

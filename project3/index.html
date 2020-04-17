@@ -25,19 +25,32 @@
     <!-- Add your required libraries here either as local files or CDN-hosted files -->
 
 
+    <!-- Include annyang! -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+
     <!-- My script(s) -->
     <script src="js/script.js"></script>
   </head>
 
   <body>
 <img class="background" src=".\assets\images\city0.jpg">
+<div id="backColor" > </div>
 <img id="screen1" src=".\assets\images\drone.png">
 <img id="screen2" src=".\assets\images\shopping.png">
 <img id="screen3" src=".\assets\images\home.jpg">
 <img id="screen4" src=".\assets\images\hospital.jpg">
 <img id="screen5" src=".\assets\images\data.png">
 <img id="screen6" src=".\assets\images\school.jpg">
-<button id="buttonShop" class="buttonClass" onclick="driveCar()"> move</button>
+<img id="shopping" src=".\assets\images\shop.jpg">
+
+<button id="buttonShop" class="buttonClass" onclick="shopping()"> Start</button>
+<button id="exitShop" class="buttonClass" onclick="quitChoice()"> Exit</button>
+
+  <div id='explain'>input the stuff you want <br></div>
+    <input type="text" id="myInput">
+
+  <input type="number" id='myNumber' min="1" max="10">
+  <button id="buyStuff"  class="buttonClass" onclick="stuff()"> Show</button>
 
 
   </body>
