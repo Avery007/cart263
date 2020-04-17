@@ -101,4 +101,11 @@ $('#explain').text(inputNumber); //display input
 
 function shopping(){
   $('#shopping').show();
+  $('#myInput').show();
+  $('#myNumber').show();
+  $('#buyStuff').show();
+  $('#bigscreen').show();
+  $('#screen2').hide();
+  $('#buttonShop').hide();
+
 }
