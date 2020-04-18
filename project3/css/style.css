@@ -209,7 +209,7 @@ left:60%;
 width:15vw;
 height:40vh;
 z-index:4;
-
+display:none;
 
 
 
@@ -222,7 +222,7 @@ z-index:4;
   width:5vw;
   height:20vh;
   z-index:4;
-
+  display:none;
 }
 #checking{
   position: absolute;

@@ -140,13 +140,15 @@ $('#home').css('zIndex',5);
 
 
 function checkup(){
+  $('#humanBody').show();
 $('#screen4').hide();
-$('#buttonHospital').hide();  
+$('#buttonHospital').hide();
 $('#checkup').show();
 $('#checkup').droppable({
 drop: function( event, ui ){
 $('#humanBody').remove();
 $('#checking').show();
+  setTimeout(function(){$('#checking').attr('src', 'assets/images/result.jpg')},8000);
 }
 
 });
