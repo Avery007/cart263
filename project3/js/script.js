@@ -12,15 +12,7 @@ to match your project! Write JavaScript to do amazing things below!
 let voice1="sellphone is the best entertainment";
 let voice2="sellphone is the best beauty";
 let voice3="we cannot live without sellphone";
-let fruit = [
-  "apple",
-  "pear",
-  "banana",
-  "strawberry",
-  "watermelon",
-  "kiwi",
 
-]
 
 $(document).ready(setup);
 
@@ -39,6 +31,27 @@ enterScreen('#screen3',$("#buttonHome"));
 enterScreen('#screen4',$("#buttonHospital"));
 //enterScreen($('#screen3'),voice3);
 
+
+}
+
+
+
+function gotData(data){
+
+    let symptoms = getRandomElement(data.symptoms);
+    let disorders = getRandomElement(data.disorders);
+    let phobia = getRandomElement(data.phobia);
+    let drug = getRandomElement(data.drugs);
+    let instruction = getRandomElement(data.instructions);
+
+   let description = `Your analysis is done. You have ${symptoms},${disorders} and ${phobia}. You need ${drug},and you should ${instruction}.`;
+    $('#explain').text(description);
+
+}
+
+
+function getRandomElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
 
 function enterScreen(screen,button){
@@ -138,8 +151,13 @@ $('#home').css('zIndex',5);
        } //end of if annyang
    } //end of speak function
 
-
+function report(){
+    $.getJSON('data/data.json',gotData);
+    $('#checking').attr('src', 'assets/images/result.jpg');
+  }
 function checkup(){
+
+
   $('#humanBody').show();
 $('#screen4').hide();
 $('#buttonHospital').hide();
@@ -148,7 +166,7 @@ $('#checkup').droppable({
 drop: function( event, ui ){
 $('#humanBody').remove();
 $('#checking').show();
-  setTimeout(function(){$('#checking').attr('src', 'assets/images/result.jpg')},8000);
+  setTimeout(report,8000);
 }
 
 });

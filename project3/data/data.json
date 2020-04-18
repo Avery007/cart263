@@ -67,7 +67,7 @@
  "repetitive behavior"
 ],
 
-"psychological problems": [
+"disorders": [
 "hyperactivity",
  "limited attention",
  "communication difficulty",
@@ -124,7 +124,7 @@
 "Sleep disorder",
 "Sleepwalking disorder",
 "Sleep paralysis",
-"Social anxiety disorder",
+"Social anxiety disorder"
 ],
 
 "phobia":[
@@ -155,7 +155,7 @@
 "Aquaphobia",
 "Acrophobia",
 "Escalaphobia",
-"Tunnel phobia",
+"Tunnel phobia"
 ],
 
 
@@ -184,7 +184,6 @@
     "Calcium Gluconate",
     "Chlorpropamide",
     "Chlorthalidone",
-    "Cholera Vaccine",
     "Ciclopirox Gel",
     "Cilostazol",
     "Emtriva",
@@ -306,7 +305,7 @@
     "Zonalon",
     "Zosyn",
     "Zyclara",
-    "Zyflo",
+    "Zyflo"
   ],
 
   "instructions":[
@@ -324,8 +323,42 @@
  "hang out with your friends",
   "listen to the authority",
   "buy a robot as your assistant",
-  "listen to music regularly",
+  "listen to music regularly"
 
 
-  ]
+],
+
+"names": [
+"Alatar",
+"Aldamir",
+"Aldaron",
+"Aldor",
+"Bofur",
+"Boldog",
+"Bolg",
+"Bombur",
+"Borin",
+"Bregor",
+"Brodda",
+"Cemendur",
+"Ceorl",
+"Ciryon",
+"Durin",
+"Dwalin",
+"Elenna",
+"Finvain",
+"Grolin",
+"Harry",
+"Jack",
+"Kevin",
+"Merin",
+"Smaug",
+"Snowmane",
+"Telchar",
+"Urwen",
+"Vinyarion",
+"Walda",
+"William"
+
+]
 }

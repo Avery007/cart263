@@ -55,12 +55,14 @@ z-index:0;
 
 #explain {
   position: absolute;
-  top:70%;
-  left:50%;
-  font-size: 15px;
+  top:30%;
+  right:10%;
+  width:25vw;
+  height:40vh;
+  font-size: 22px;
   color: yellow;
   z-index: 7;
-  display:none;
+
 }
 
 #backColor{
@@ -205,7 +207,7 @@ display:none;
 #checkup{
 position: absolute;
 top:30%;
-left:60%;
+left:40%;
 width:15vw;
 height:40vh;
 z-index:4;
@@ -218,7 +220,7 @@ display:none;
 #humanBody{
   position: absolute;
   top:20%;
-  left:30%;
+  left:5%;
   width:5vw;
   height:20vh;
   z-index:4;
@@ -226,10 +228,10 @@ display:none;
 }
 #checking{
   position: absolute;
-  top:30%;
-  left:25%;
-  width:40vw;
-  height:40vh;
+  top:20%;
+  left:5%;
+  width:50vw;
+  height:50vh;
   z-index:4;
   display:none;
 
