@@ -35,7 +35,7 @@ function setup() {
 
 
 enterScreen('#screen2',$("#buttonShop"));
-enterScreen('#screen3',$("#buttonShop"));
+enterScreen('#screen3',$("#buttonHome"));
 //enterScreen($('#screen3'),voice3);
 
 }
@@ -109,3 +109,30 @@ function shopping(){
   $('#buttonShop').hide();
 
 }
+
+function goHome(){
+  $('#home').show();
+  $('#screen3').hide();
+       if (annyang) {
+         let lighten = {
+
+            'turn on *the light': function() {
+$('#home').css('zIndex',5);
+
+           }
+         }; //end of let commands
+
+         let tv={'*verb tv':function(){
+           $('#robot0').show();
+           $('#robot1').show();
+           $('#robot2').show();
+
+
+         }
+       }
+         annyang.addCommands(lighten);
+         annyang.addCommands(tv);
+         annyang.start();
+
+       } //end of if annyang
+   } //end of speak function

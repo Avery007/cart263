@@ -60,6 +60,7 @@ z-index:0;
   font-size: 15px;
   color: yellow;
   z-index: 7;
+  display:none;
 }
 
 #backColor{
@@ -155,6 +156,52 @@ display:none;
 
 
 }
+
+
+#home{
+position: absolute;
+top:0%;
+left:0%;
+width:100vw;
+height:100vh;
+z-index:1;
+display:none;
+
+
+
+}
+
+
+#robot0{
+position: absolute;
+top:37%;
+left:23%;
+width:17vw;
+height:20vh;
+z-index:5;
+display:none;
+}
+
+#robot1{
+position: absolute;
+top:37%;
+left:40%;
+width:17vw;
+height:20vh;
+z-index:5;
+display:none;
+}
+
+#robot2{
+position: absolute;
+top:37%;
+left:55%;
+width:15.7vw;
+height:20vh;
+z-index:5;
+display:none;
+}
+
 .buttonClass {
     z-index: 2;
     cursor: pointer;
@@ -198,7 +245,7 @@ display:none;
     top: 30vw;
     left: 35vw;
     z-index: 3;
-
+    display: none;
   }
 
   #buttonColor {
