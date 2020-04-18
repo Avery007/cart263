@@ -202,6 +202,38 @@ z-index:5;
 display:none;
 }
 
+#checkup{
+position: absolute;
+top:30%;
+left:60%;
+width:15vw;
+height:40vh;
+z-index:4;
+
+
+
+
+}
+
+#humanBody{
+  position: absolute;
+  top:20%;
+  left:30%;
+  width:5vw;
+  height:20vh;
+  z-index:4;
+
+}
+#checking{
+  position: absolute;
+  top:30%;
+  left:25%;
+  width:40vw;
+  height:40vh;
+  z-index:4;
+  display:none;
+
+}
 .buttonClass {
     z-index: 2;
     cursor: pointer;
@@ -248,11 +280,11 @@ display:none;
     display: none;
   }
 
-  #buttonColor {
+  #buttonHospital {
     position: absolute;
     top: 70vh;
     left: 5px;
-    z-index: 7;
+    z-index: 3;
     display: none;
   }
 

@@ -36,6 +36,7 @@ function setup() {
 
 enterScreen('#screen2',$("#buttonShop"));
 enterScreen('#screen3',$("#buttonHome"));
+enterScreen('#screen4',$("#buttonHospital"));
 //enterScreen($('#screen3'),voice3);
 
 }
@@ -136,3 +137,19 @@ $('#home').css('zIndex',5);
 
        } //end of if annyang
    } //end of speak function
+
+
+function checkup(){
+$('#screen4').hide();
+$('#buttonHospital').hide();  
+$('#checkup').show();
+$('#checkup').droppable({
+drop: function( event, ui ){
+$('#humanBody').remove();
+$('#checking').show();
+}
+
+});
+
+$('#humanBody').draggable();
+}
