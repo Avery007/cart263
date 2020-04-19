@@ -25,13 +25,27 @@ function setup() {
 
   });
 
+  $( "#screen1" ).keydown(function( e ) {
+  var code = e.keyCode || e.which;
+  if ( code == 65){
+    alert('hello');
+    //$( "#screen1" ).animate({
+     //left: "+=50",
+  }
+  else{alert('hello');}
+
+
+  });
+
+$('#explain').text(textContent);
 
 enterScreen('#screen2',$("#buttonShop"));
 enterScreen('#screen3',$("#buttonHome"));
 enterScreen('#screen4',$("#buttonHospital"));
 enterScreen('#screen7',$("#buttonPolice"));
 enterScreen('#screen8',$("#exitButton"));
-
+enterScreen('#screen1',$("#droneButton"));
+enterScreen('#screen6',$("#learnButton"));
 }
 
 
@@ -96,15 +110,10 @@ $(screen).click(
 
 
 }
-//function deliver(){
-  //$("#screen1").position({
-                //my: "center",
-                //at: "center",
-                //of: "#screen4"
-             //});
 
 
-//}
+
+
 function getId(){
 if(!registered){
 $('#loading').show();
@@ -232,6 +241,29 @@ $('#humanBody').draggable();
 else{$('#backColor').hide();alert('sorry, without a digital id,you cannot use our advanced serves, please go to the police firstly ');}
 }
 
+
+function learning(){
+  $('#checking').show();
+  $('#checking').attr('src', 'assets/images/mind.png');
+textContent='Our AI expert is analyzing your IQ...';
+$('#explain').text(textContent);
+let iQ = Math.floor(Math.random(70) * 100);
+let newIq=iQ*2;
+setTimeout(function(){$('#chip').show();
+$('#chip').draggable();
+$('#explain').text("your IQ is: "+ iQ+
+"Our result suggests your are below the average iQ in our society,but here is a way to improve it!"+
+"drag the chip into your brain, and you will be smart than ever");},5000);
+$('#exitButton').show();
+$('#checking').droppable({
+drop: function( event, ui ){
+$('#chip').hide();
+$('#checking').attr('src', 'assets/images/brain.jpg');
+$('#explain').text("congradulation! Your new IQ is: " + newIq+ " You are as smart as AI now!");
+}
+});
+
+}
 function quit(){
   $("#home").hide();
   $("#home").css('zIndex','1');

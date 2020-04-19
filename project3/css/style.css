@@ -66,7 +66,7 @@ z-index:-1;
   font-size: 2vw;
   color: blue;
   z-index: 7;
-  display: none;
+
 }
 
 #backColor{
@@ -85,8 +85,8 @@ z-index:-1;
 
 #screen1{
 position: absolute;
-top:80%;
-right:10%;
+bottom: 200px;
+right:100px;
 width:20vw;
 height:20vh;
 z-index:0;
@@ -269,6 +269,16 @@ display:none;
   z-index:4;
   display:none;
 }
+
+#chip{
+  position: absolute;
+  top:60%;
+  right:15%;
+  width:5vw;
+  height:5vh;
+  z-index:4;
+  display:none;
+}
 #checking{
   position: absolute;
   top:20%;
@@ -356,6 +366,19 @@ display:none;
 
 
   #buttonPolice {
+    position: absolute;
+
+    z-index: 4;
+    display: none;
+  }
+
+  #droneButton {
+    position: absolute;
+
+    z-index: 4;
+    display: none;
+  }
+  #learnButton {
     position: absolute;
 
     z-index: 4;
