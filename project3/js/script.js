@@ -30,7 +30,7 @@ enterScreen('#screen2',$("#buttonShop"));
 enterScreen('#screen3',$("#buttonHome"));
 enterScreen('#screen4',$("#buttonHospital"));
 enterScreen('#screen7',$("#buttonPolice"));
-
+enterScreen('#screen8',$("#exitButton"));
 
 }
 
@@ -73,8 +73,8 @@ $(screen).click(
              $('#backColor').show();
              button.show();
              button.position({
-                           my: "left top",
-                           at: "left top",
+                           my: "left bottom",
+                           at: "left bottom",
                            of: screen
                            });
 

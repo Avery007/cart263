@@ -97,7 +97,7 @@ z-index:0;
 #screen2{
 position: absolute;
 top:10%;
-left:68%;
+right:22%;
 width:10vw;
 height:10vh;
 z-index:0;
@@ -106,7 +106,7 @@ z-index:0;
 
 #screen3{
 position: absolute;
-top:65%;
+bottom: 25%;
 left:25%;
 width:10vw;
 height:10vh;
@@ -183,7 +183,15 @@ height:10vh;
 z-index:0;
 
 }
+#screen8{
+position: absolute;
+bottom:25%;
+right:15%;
+width:10vw;
+height:10vh;
+z-index:0;
 
+}
 
 #home{
 position: absolute;
