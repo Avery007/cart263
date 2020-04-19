@@ -13,6 +13,7 @@ let voice1="sellphone is the best entertainment";
 let voice2="sellphone is the best beauty";
 let voice3="we cannot live without sellphone";
 let inputText="";
+let registered=false;
 
 $(document).ready(setup);
 
@@ -106,7 +107,7 @@ function getId(){
 $('#loading').show();
   $.getJSON('data/data.json',gotId);
 
-
+ registered=true;
 
 }
 
@@ -123,6 +124,7 @@ function buyStuff(){
 }
 
 function shopping(){
+  if(registered){ // cannot get in without an digital id
   $('#explain').show();
   $('#explain').text('Welcome to the online shopping center! Please input your oder below. We will report spam texts or illegal deals to the police.');
   $('#shopping').show();
@@ -132,7 +134,8 @@ function shopping(){
   $('#bigscreen').show();
   $('#screen2').hide();
   $('#buttonShop').hide();
-
+}
+else{ alert('Sorry, you cannot go shopping without a digital id, please go to the police firstly');}
 }
 
 function goHome(){
@@ -168,8 +171,8 @@ function report(){
     $('#explain').show();
   }
 function checkup(){
-
-
+if(registered)
+{
   $('#humanBody').show();
 $('#screen4').hide();
 $('#buttonHospital').hide();
@@ -184,4 +187,7 @@ $('#checking').show();
 });
 
 $('#humanBody').draggable();
+}
+
+else{alert('sorry, without a digital id,you cannot use our advanced serves, please go to the police firstly ');}
 }
