@@ -29,7 +29,7 @@ function setup() {
 enterScreen('#screen2',$("#buttonShop"));
 enterScreen('#screen3',$("#buttonHome"));
 enterScreen('#screen4',$("#buttonHospital"));
-//enterScreen($('#screen3'),voice3);
+enterScreen($('#police'),$("#buttonPolice"));
 
 
 }
@@ -62,8 +62,8 @@ $(screen).mouseover(
              $('#backColor').show();
              button.show();
              button.position({
-                           my: "center",
-                           at: "center",
+                           my: "left top",
+                           at: "left top",
                            of: screen
                            });
 
@@ -75,7 +75,7 @@ $(screen).mouseover(
 
   $(screen).click(function () {
               $('#backColor').hide();
-              $(screen).css('width','10vw');
+              $(screen).css('width','9vw');
             $(screen).css('height','10vh');
               $(screen).css('zIndex','1');
              button.hide();
