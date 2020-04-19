@@ -14,6 +14,7 @@ let inputText="";
 let registered=false;
 let textContent="";
 let name="";
+let iQ=0;
 $(document).ready(setup);
 
 
@@ -25,17 +26,17 @@ function setup() {
 
   });
 
-  $( "#screen1" ).keydown(function( e ) {
-  var code = e.keyCode || e.which;
-  if ( code == 65){
-    alert('hello');
-    //$( "#screen1" ).animate({
-     //left: "+=50",
-  }
-  else{alert('hello');}
-
-
-  });
+  // $( "#screen1" ).keydown(function( e ) {
+  // var code = e.keyCode || e.which;
+  // if ( code == 65){
+  //   alert('hello');
+  //   //$( "#screen1" ).animate({
+  //    //left: "+=50",
+  // }
+  // else{alert('hello');}
+  //
+  //
+  // });
 
 $('#explain').text(textContent);
 
@@ -46,6 +47,7 @@ enterScreen('#screen7',$("#buttonPolice"));
 enterScreen('#screen8',$("#exitButton"));
 enterScreen('#screen1',$("#droneButton"));
 enterScreen('#screen6',$("#learnButton"));
+enterScreen('#screen9',$("#jobButton"));
 }
 
 
@@ -111,8 +113,21 @@ $(screen).click(
 
 }
 
+function getJob(){
+if(iQ==0){
+  alert('In order to get a suitable job,please go to the education center firstly');
+  $('#backColor').hide();
+}
+else if (iQ<100){
+  $('#explain').text('Hello,your IQ is only:' + iQ + ' so we cannot give you an offer. Please go to the education center to improve your life');
+}
+else if(iQ>100){
+$('#explain').text('Hello,you are very smart so we invite you to join our AI team! ');
 
 
+}
+
+}
 
 function getId(){
 if(!registered){
@@ -247,19 +262,21 @@ function learning(){
   $('#checking').attr('src', 'assets/images/mind.png');
 textContent='Our AI expert is analyzing your IQ...';
 $('#explain').text(textContent);
-let iQ = Math.floor(Math.random(70) * 100);
+iQ = Math.floor(Math.random(70) * 100);
 let newIq=iQ*2;
 setTimeout(function(){$('#chip').show();
 $('#chip').draggable();
+$('#exitButton').show();
 $('#explain').text("your IQ is: "+ iQ+
 "Our result suggests your are below the average iQ in our society,but here is a way to improve it!"+
 "drag the chip into your brain, and you will be smart than ever");},5000);
-$('#exitButton').show();
+
 $('#checking').droppable({
 drop: function( event, ui ){
+  iQ=newIq;
 $('#chip').hide();
 $('#checking').attr('src', 'assets/images/brain.jpg');
-$('#explain').text("congradulation! Your new IQ is: " + newIq+ " You are as smart as AI now!");
+$('#explain').text("congradulation! Your new IQ is: " + iQ + " You are as smart as AI now!");
 }
 });
 
@@ -283,5 +300,5 @@ $("#bigscreen").hide();
 $("#myInput").hide();
 $("#shopping").hide();
 $("#buyStuff").hide();
-
+$('#chip').hide();
 }
