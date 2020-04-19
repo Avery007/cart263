@@ -49,6 +49,15 @@ function gotData(data){
 
 }
 
+function gotId(data){
+ alert('hello');
+    let name = getRandomElement(data.names);
+   let id = Math.floor(Math.random(10000) * 10000000);
+
+   let info= ` Your name: ${name}. Your Id number: ${id}. Now we have you in the system and you can walk around`;
+    $('#explain').text(info);
+   $('#explain').show();
+}
 
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -93,6 +102,13 @@ $(screen).mouseover(
 
 
 //}
+function getId(){
+$('#loading').show();
+  $.getJSON('data/data.json',gotId);
+
+
+
+}
 
 function buyStuff(){
   inputText = $("#myInput").val();
@@ -149,6 +165,7 @@ $('#home').css('zIndex',5);
 function report(){
     $.getJSON('data/data.json',gotData);
     $('#checking').attr('src', 'assets/images/result.jpg');
+    $('#explain').show();
   }
 function checkup(){
 

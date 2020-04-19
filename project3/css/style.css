@@ -248,6 +248,17 @@ display:none;
   display:none;
 
 }
+
+#loading{
+  position: absolute;
+  top:20%;
+  left:5%;
+  width:50vw;
+  height:50vh;
+  z-index:4;
+  display:none;
+
+}
 .buttonClass {
     z-index: 2;
     cursor: pointer;
