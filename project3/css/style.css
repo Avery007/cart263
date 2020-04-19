@@ -165,11 +165,11 @@ display:none;
 
 #police{
 position: absolute;
-top:38%;
-left:60%;
-width:8vw;
-height:22vh;
-z-index:0;
+top:40%;
+right:15%;
+width:12vw;
+height:40vh;
+z-index:4;
 display:none;
 }
 

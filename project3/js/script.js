@@ -106,12 +106,15 @@ $(screen).click(
 
 //}
 function getId(){
-
+if(!registered){
 $('#loading').show();
   $.getJSON('data/data.json',gotId);
-
+$('#police').show();
  registered=true;
-
+}
+else{alert('You have already got an id,no need to come again!');
+   $('#backColor').hide();
+     }
 }
 
 function buyStuff(){
@@ -243,8 +246,10 @@ $("#result").hide();
 $("#explain").text("");
 $('#exitButton').hide();
 $("#loading").hide();
+$('#police').hide();
 $("#bigscreen").hide();
 $("#myInput").hide();
 $("#shopping").hide();
 $("#buyStuff").hide();
+
 }
