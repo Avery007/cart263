@@ -184,7 +184,16 @@ display:none;
 
 
 }
+#robotAssistant{
+  position: absolute;
+  top:56%;
+  right:5%;
+  width:20vw;
+  height:30vh;
+  z-index:6;
+ display:none;
 
+}
 
 #robot0{
 position: absolute;

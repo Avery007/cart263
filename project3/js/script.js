@@ -9,12 +9,11 @@ This is a template. Fill in the title, author, and this description
 to match your project! Write JavaScript to do amazing things below!
 
 *********************************************************************/
-let voice1="sellphone is the best entertainment";
-let voice2="sellphone is the best beauty";
-let voice3="we cannot live without sellphone";
+
 let inputText="";
 let registered=false;
-
+let textContent="";
+let name="";
 $(document).ready(setup);
 
 
@@ -52,7 +51,7 @@ function gotData(data){
 
 function gotId(data){
  alert('hello');
-    let name = getRandomElement(data.names);
+    name = getRandomElement(data.names);
    let id = Math.floor(Math.random(10000) * 10000000);
 
    let info= ` Your name: ${name}. Your Id number: ${id}. Now we have you in the system and you can walk around`;
@@ -139,32 +138,57 @@ else{ alert('Sorry, you cannot go shopping without a digital id, please go to th
 }
 
 function goHome(){
+  $('#robotAssistant').show();
   $('#home').show();
   $('#screen3').hide();
-       if (annyang) {
-         let lighten = {
-
-            'turn on *the light': function() {
-$('#home').css('zIndex',5);
-
-           }
-         }; //end of let commands
-
-         let tv={'*verb tv':function(){
-           $('#robot0').show();
-           $('#robot1').show();
-           $('#robot2').show();
 
 
-         }
-       }
-         annyang.addCommands(lighten);
-         annyang.addCommands(tv);
-         annyang.start();
+  if(registered){
 
-       } //end of if annyang
-   } //end of speak function
+    textContent="Hello "+ name + " Welcome back your smart home! You can use your voices to control the stuff.I am your personal robot assistant Alex,and I will show you how to enjoy your home,";
+   activateAnnyang();
 
+   }
+   else{
+   textContent="I am your personal robot assistant Alex,I want to remind you that you dont have an id for using the smart serves, please go to the police firstly.See you later";
+}
+$('#explain').text(textContent);
+$('#explain').show();
+responsiveVoice.speak(textContent, 'UK English Male', {
+  pitch: 4,
+  rate: 1,
+  volume: 10,
+
+});
+}
+
+function activateAnnyang(){
+  if (annyang) {
+    let lighten = {
+
+       'turn on *the light': function() {
+  $('#home').css('zIndex',5);
+
+      }
+    }; //end of let commands
+
+    let tv={'*verb tv':function(){
+      $('#robot0').show();
+      $('#robot1').show();
+      $('#robot2').show();
+
+
+    }
+  }
+    annyang.addCommands(lighten);
+    annyang.addCommands(tv);
+    annyang.start();
+
+  } //end of if annyang
+
+
+
+}
 function report(){
     $.getJSON('data/data.json',gotData);
     $('#checking').attr('src', 'assets/images/result.jpg');
