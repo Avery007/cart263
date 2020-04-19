@@ -35,36 +35,46 @@
 
   <body>
 <img class="background" src=".\assets\images\city0.jpg">
-<div id="backColor" > </div>
+
+
 <img id="screen1" src=".\assets\images\drone.png">
 <img id="screen2" src=".\assets\images\shopping.png">
 <img id="screen3" src=".\assets\images\home.jpg">
 <img id="screen4" src=".\assets\images\hospital.jpg">
 <img id="screen5" src=".\assets\images\data.png">
 <img id="screen6" src=".\assets\images\school.jpg">
+<img id="screen7" src=".\assets\images\poli.png">
+<div id="backColor" > </div>
+
 <img id="shopping" src=".\assets\images\shop.jpg">
+
+
 <img id="home" src=".\assets\images\film.jpg">
 <img id="robot0" src=".\assets\images\robot0.gif">
 <img id="robot1" src=".\assets\images\robot1.gif">
 <img id="robot2" src=".\assets\images\robot2.gif">
+<img id="robotAssistant" src=".\assets\images\robot.png">
+
 <img id="bigscreen" src=".\assets\images\bigscreen.png">
 <img id="checkup" src=".\assets\images\checkup.png">
 <img id="humanBody" src=".\assets\images\human.png">
-<img id="checking" src=".\assets\images\hospital.gif">
-<img id="police" src=".\assets\images\police0.png">
+<img id="checking" >
 <img id="loading" src=".\assets\images\id.gif">
-<img id="robotAssistant" src=".\assets\images\robot.png">
+<img id="police" src=".\assets\images\police.png">
+
+<div id='explain'></div>
+<textarea id="myInput" rows = "12" cols = "35">Tell us what you want to buy.</textarea>
+
+<button id="buyStuff"  class="buttonClass" onclick="buyStuff()"> Submit</button>
+
+
 <button id="buttonShop" class="buttonClass" onclick="shopping()"> Start</button>
 <button id="buttonHome" class="buttonClass" onclick="goHome()"> Start</button>
 <button id="buttonHospital" class="buttonClass" onclick="checkup()"> Start</button>
 <button id="buttonPolice" class="buttonClass" onclick="getId()"> Start</button>
-<button id="exitShop" class="buttonClass" onclick="quitChoice()"> Exit</button>
+<button id="exitButton" class="buttonClass" onclick="quit()"> Exit</button>
 
-  <div id='explain'>input the stuff you want <br></div>
 
-<textarea id="myInput" rows = "12" cols = "35">Tell us what you want to buy.</textarea>
-
-<button id="buyStuff"  class="buttonClass" onclick="buyStuff()"> Submit</button>
 
 
   </body>

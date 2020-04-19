@@ -29,7 +29,7 @@ function setup() {
 enterScreen('#screen2',$("#buttonShop"));
 enterScreen('#screen3',$("#buttonHome"));
 enterScreen('#screen4',$("#buttonHospital"));
-enterScreen($('#police'),$("#buttonPolice"));
+enterScreen('#screen7',$("#buttonPolice"));
 
 
 }
@@ -50,13 +50,14 @@ function gotData(data){
 }
 
 function gotId(data){
- alert('hello');
+
     name = getRandomElement(data.names);
    let id = Math.floor(Math.random(10000) * 10000000);
 
    let info= ` Your name: ${name}. Your Id number: ${id}. Now we have you in the system and you can walk around`;
     $('#explain').text(info);
    $('#explain').show();
+    $('#exitButton').show();
 }
 
 function getRandomElement(array) {
@@ -64,7 +65,8 @@ function getRandomElement(array) {
 }
 
 function enterScreen(screen,button){
-$(screen).mouseover(
+
+$(screen).click(
   function() {$(screen).css('width','40vw');
               $(screen).css('height','40vh');
              $(screen).css('zIndex','3');
@@ -82,14 +84,15 @@ $(screen).mouseover(
 
 
 
-  $(screen).click(function () {
-              $('#backColor').hide();
+  button.click(function () {
+
               $(screen).css('width','9vw');
             $(screen).css('height','10vh');
               $(screen).css('zIndex','1');
              button.hide();
-});
 
+
+});
 
 
 }
@@ -103,6 +106,7 @@ $(screen).mouseover(
 
 //}
 function getId(){
+
 $('#loading').show();
   $.getJSON('data/data.json',gotId);
 
@@ -123,6 +127,7 @@ function buyStuff(){
 }
 
 function shopping(){
+
   if(registered){ // cannot get in without an digital id
   $('#explain').show();
   $('#explain').text('Welcome to the online shopping center! Please input your oder below. We will report spam texts or illegal deals to the police.');
@@ -131,17 +136,20 @@ function shopping(){
   $('#myNumber').show();
   $('#buyStuff').show();
   $('#bigscreen').show();
-  $('#screen2').hide();
-  $('#buttonShop').hide();
+     $('#exitButton').show();
+  //$('#screen2').hide();
+
 }
-else{ alert('Sorry, you cannot go shopping without a digital id, please go to the police firstly');}
+else{ alert('Sorry, you cannot go shopping without a digital id, please go to the police firstly');
+$('#backColor').hide();
+            }
 }
 
 function goHome(){
   $('#robotAssistant').show();
   $('#home').show();
-  $('#screen3').hide();
-
+  //$('#screen3').hide();
+   $('#exitButton').show();
 
   if(registered){
 
@@ -167,7 +175,7 @@ function activateAnnyang(){
     let lighten = {
 
        'turn on *the light': function() {
-  $('#home').css('zIndex',5);
+  $('#home').css('zIndex',3);
 
       }
     }; //end of let commands
@@ -193,17 +201,22 @@ function report(){
     $.getJSON('data/data.json',gotData);
     $('#checking').attr('src', 'assets/images/result.jpg');
     $('#explain').show();
+     $('#exitButton').show();
   }
 function checkup(){
+
 if(registered)
 {
   $('#humanBody').show();
-$('#screen4').hide();
+//$('#screen4').hide();
 $('#buttonHospital').hide();
 $('#checkup').show();
 $('#checkup').droppable({
 drop: function( event, ui ){
-$('#humanBody').remove();
+$('#humanBody').hide();
+//replace issue
+$('#checkup').hide();
+$('#checking').attr('src', 'assets/images/hospital.gif');
 $('#checking').show();
   setTimeout(report,8000);
 }
@@ -213,5 +226,25 @@ $('#checking').show();
 $('#humanBody').draggable();
 }
 
-else{alert('sorry, without a digital id,you cannot use our advanced serves, please go to the police firstly ');}
+else{$('#backColor').hide();alert('sorry, without a digital id,you cannot use our advanced serves, please go to the police firstly ');}
+}
+
+function quit(){
+  $("#home").hide();
+  $("#home").css('zIndex','1');
+  $("#robot0").hide();
+  $("#robot1").hide();
+  $("#robot2").hide();
+  $("#robotAssistant").hide();
+$('#backColor').css('zIndex','2');
+$('#backColor').hide();
+$("#checking").hide();
+$("#result").hide();
+$("#explain").text("");
+$('#exitButton').hide();
+$("#loading").hide();
+$("#bigscreen").hide();
+$("#myInput").hide();
+$("#shopping").hide();
+$("#buyStuff").hide();
 }

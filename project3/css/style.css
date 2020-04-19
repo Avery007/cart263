@@ -6,7 +6,7 @@ overflow: hidden;
 
 width:100vw;
 height:100vh;
-z-index:0;
+z-index:-1;
 
 }
 
@@ -19,6 +19,9 @@ z-index:0;
   z-index:5;
   display: none;
 
+
+}
+.allElements{
 
 }
 #myInput {
@@ -86,7 +89,7 @@ top:80%;
 right:10%;
 width:20vw;
 height:20vh;
-z-index:1;
+z-index:0;
 
 
 
@@ -97,7 +100,7 @@ top:10%;
 left:68%;
 width:10vw;
 height:10vh;
-z-index:1;
+z-index:0;
 
 }
 
@@ -107,7 +110,7 @@ top:65%;
 left:25%;
 width:10vw;
 height:10vh;
-z-index:1;
+z-index:0;
 
 
 
@@ -119,7 +122,7 @@ top:35%;
 left:15%;
 width:10vw;
 height:10vh;
-z-index:1;
+z-index:0;
 
 
 
@@ -130,7 +133,7 @@ top:100px;
 left:500px;
 width:10vw;
 height:10vh;
-z-index:1;
+z-index:0;
 
 
 
@@ -141,7 +144,7 @@ top:45%;
 left:35%;
 width:10vw;
 height:10vh;
-z-index:1;
+z-index:0;
 
 
 
@@ -166,10 +169,20 @@ top:38%;
 left:60%;
 width:8vw;
 height:22vh;
-z-index:1;
-
+z-index:0;
+display:none;
 }
 
+
+#screen7{
+position: absolute;
+top:38%;
+left:60%;
+width:10vw;
+height:10vh;
+z-index:0;
+
+}
 
 
 #home{
@@ -179,6 +192,7 @@ left:0%;
 width:100vw;
 height:100vh;
 z-index:1;
+
 display:none;
 
 
@@ -306,14 +320,15 @@ display:none;
     display: none;
 
   }
-  #exitShop {
+  #exitButton{
     position: absolute;
     top: 20%;
     left: 60%;
-    z-index: 3;
-    display: none;
+    z-index: 7;
+  display:none;
 
   }
+
   #buttonHome{
     position: absolute;
     top: 30vw;
