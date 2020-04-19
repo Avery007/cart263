@@ -12,7 +12,7 @@ to match your project! Write JavaScript to do amazing things below!
 let voice1="sellphone is the best entertainment";
 let voice2="sellphone is the best beauty";
 let voice3="we cannot live without sellphone";
-
+let inputText="";
 
 $(document).ready(setup);
 
@@ -94,26 +94,21 @@ $(screen).mouseover(
 
 //}
 
+function buyStuff(){
+  inputText = $("#myInput").val();
+  $('#explain').text("Thanks for your order! We will comfirm the order and deliver it to your home soon");
+  responsiveVoice.speak('We have got your message:'+inputText, 'UK English Female', {
+    pitch: 1,
+    rate: 0.6,
+    volume: 10,
 
-  function showFruit() {
-    responsiveVoice.speak("Welcome you got it", 'UK English Male', {
-      pitch: 0.6,
-      rate: 0.6,
-      volume: 10,
-
-    });
-
-}
-
-function stuff(){
-  console.log(inputText);
-var inputText = $("#myInput").val();
-var inputNumber = $("#number").val();
-$('#explain').text(inputNumber); //display input
+  });
 
 }
 
 function shopping(){
+  $('#explain').show();
+  $('#explain').text('Welcome to the online shopping center! Please input your oder below. We will report spam texts or illegal deals to the police.');
   $('#shopping').show();
   $('#myInput').show();
   $('#myNumber').show();
