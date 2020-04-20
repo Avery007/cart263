@@ -24,11 +24,12 @@ let checking='assets/images/hospital.gif';
 let mindImg='assets/images/mind.png';
 let brainImg='assets/images/brain.jpg';
 let dataImg='assets/images/id.gif';
+let sorryImg='assets/images/sorryscreen.jpg';
 $(document).ready(setup);
 
 
 function setup() {
-  responsiveVoice.speak("Welcome to the year 2030", 'UK English Male', {
+  responsiveVoice.speak("Welcome to the year 2040 ", 'UK English Male', {
     pitch: 0.6,
     rate: 0.6,
     volume: 10,
@@ -135,14 +136,17 @@ $(screen).click(
 }
 
 function getJob(){
-
+  $('#exitButton').show();
 if(iQ==0){
   alert('In order to get a suitable job,please go to the education center firstly');
   $('#backColor').hide();
 }
+
 else if (iQ<100){
-  $('#explain').text('Hello,your IQ is only:' + iQ + ' so we cannot give you an offer. Please go to the education center to improve your life');
+  $('#explain').text('Your IQ is: ' + iQ );
+  displayImg(sorryImg);
 }
+
 else if(iQ>100){
 $('#explain').text('Hello,you are very smart so we invite you to join our AI team! ');
 $('.flexContainer').css('display','flex');
