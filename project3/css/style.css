@@ -21,9 +21,7 @@ z-index:-1;
 
 
 }
-.allElements{
 
-}
 #myInput {
   position: absolute;
   top:50%;
@@ -41,21 +39,6 @@ z-index:-1;
 
 }
 
-#myNumber {
-  position: absolute;
-  top:65%;
-  right:5%;
-  height: 5vh;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
-  z-index:5;
-  display:none;
-
-}
 
 #explain {
   position: absolute;
@@ -150,18 +133,6 @@ z-index:0;
 
 }
 
-#shopping{
-position: absolute;
-top:5%;
-left:5%;
-width:60vw;
-height:60vh;
-z-index:4;
-display:none;
-
-
-
-}
 
 #police{
 position: absolute;
@@ -289,7 +260,7 @@ display:none;
   z-index:4;
   display:none;
 }
-#checking{
+#imgContainer{
   position: absolute;
   top:20%;
   left:5%;
@@ -300,16 +271,7 @@ display:none;
 
 }
 
-#loading{
-  position: absolute;
-  top:20%;
-  left:5%;
-  width:50vw;
-  height:50vh;
-  z-index:4;
-  display:none;
 
-}
 .buttonClass {
     z-index: 2;
     cursor: pointer;
@@ -332,12 +294,20 @@ display:none;
     display: none;
 
   }
-  #reset {
+  #checkinButton{
     position: absolute;
-    top: 75%;
+    top: 35%;
     right: 20%;
     z-index: 5;
+    display:none;
 
+  }
+  #startlearn{
+    position: absolute;
+    top: 35%;
+    right: 20%;
+    z-index: 5;
+    display:none;
 
   }
   #buttonShop {
@@ -400,5 +370,22 @@ display:none;
     z-index: 4;
     display: none;
   }
-
   
+  .flexContainer {
+    position: absolute;
+    top: 10%;
+    left:5%;
+    width:65vw;
+    height:70vh;
+    display: none;
+    flex-wrap: wrap;
+    z-index:5;
+  }
+
+  .flexContainer img{
+    object-fit: contain;
+    width: 15vw;
+    height:15vh;
+    margin: 5%;
+
+  }

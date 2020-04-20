@@ -15,6 +15,15 @@ let registered=false;
 let textContent="";
 let name="";
 let iQ=0;
+let learnState=false;
+let chosenJob="";
+
+let shopimg="./assets/images/shop.jpg";
+let checkimg='assets/images/result.jpg';
+let checking='assets/images/hospital.gif';
+let mindImg='assets/images/mind.png';
+let brainImg='assets/images/brain.jpg';
+let dataImg='assets/images/id.gif';
 $(document).ready(setup);
 
 
@@ -25,6 +34,10 @@ function setup() {
     volume: 10,
 
   });
+
+
+
+
 
   // $( "#screen1" ).keydown(function( e ) {
   // var code = e.keyCode || e.which;
@@ -50,6 +63,14 @@ enterScreen('#screen6',$("#learnButton"));
 enterScreen('#screen9',$("#jobButton"));
 }
 
+function displayImg(imgId,showExit){
+  $('#imgContainer').attr('src', imgId);
+  $('#imgContainer').show();
+  if(showExit=='yes'){
+  $('#exitButton').show();
+}
+}
+
 
 
 function gotData(data){
@@ -73,7 +94,7 @@ function gotId(data){
    let info= ` Your name: ${name}. Your Id number: ${id}. Now we have you in the system and you can walk around`;
     $('#explain').text(info);
    $('#explain').show();
-    $('#exitButton').show();
+
 }
 
 function getRandomElement(array) {
@@ -114,6 +135,7 @@ $(screen).click(
 }
 
 function getJob(){
+
 if(iQ==0){
   alert('In order to get a suitable job,please go to the education center firstly');
   $('#backColor').hide();
@@ -123,15 +145,26 @@ else if (iQ<100){
 }
 else if(iQ>100){
 $('#explain').text('Hello,you are very smart so we invite you to join our AI team! ');
+$('.flexContainer').css('display','flex');
 
+$('span').click(
+  function(e){ //$('div').hide();
+chosenJob=$(this).find('img').attr('src');
+
+alert(chosenJob);
+$('.flexContainer').hide();
+$('#imgContainer').attr('src',chosenJob);
+
+});
 
 }
 
 }
 
 function getId(){
+
 if(!registered){
-$('#loading').show();
+displayImg(dataImg,'yes');
   $.getJSON('data/data.json',gotId);
 $('#police').show();
  registered=true;
@@ -158,13 +191,13 @@ function shopping(){
   if(registered){ // cannot get in without an digital id
   $('#explain').show();
   $('#explain').text('Welcome to the online shopping center! Please input your oder below. We will report spam texts or illegal deals to the police.');
-  $('#shopping').show();
+   displayImg(shopimg,'yes');
   $('#myInput').show();
   $('#myNumber').show();
   $('#buyStuff').show();
   $('#bigscreen').show();
-     $('#exitButton').show();
-  //$('#screen2').hide();
+
+
 
 }
 else{ alert('Sorry, you cannot go shopping without a digital id, please go to the police firstly');
@@ -225,60 +258,74 @@ function activateAnnyang(){
 
 }
 function report(){
+  $('#checkinButton').hide();
     $.getJSON('data/data.json',gotData);
-    $('#checking').attr('src', 'assets/images/result.jpg');
-    $('#explain').show();
-     $('#exitButton').show();
+  displayImg(checkimg);
+
   }
 function checkup(){
 
 if(registered)
 {
-  $('#humanBody').show();
-//$('#screen4').hide();
-$('#buttonHospital').hide();
-$('#checkup').show();
-$('#checkup').droppable({
-drop: function( event, ui ){
-$('#humanBody').hide();
-//replace issue
-$('#checkup').hide();
-$('#checking').attr('src', 'assets/images/hospital.gif');
-$('#checking').show();
-  setTimeout(report,8000);
+
+var info='Our machine is checking';
+var checkState=false;
+    $('#checkup').show();
+  dragdrop($('#humanBody'),$('#checkup'),$('#checkinButton'),checking);
+
 }
 
-});
 
-$('#humanBody').draggable();
-}
+
+
 
 else{$('#backColor').hide();alert('sorry, without a digital id,you cannot use our advanced serves, please go to the police firstly ');}
 }
 
 
 function learning(){
-  $('#checking').show();
-  $('#checking').attr('src', 'assets/images/mind.png');
+
+displayImg(mindImg);
 textContent='Our AI expert is analyzing your IQ...';
 $('#explain').text(textContent);
 iQ = Math.floor(Math.random(70) * 100);
-let newIq=iQ*2;
-setTimeout(function(){$('#chip').show();
-$('#chip').draggable();
-$('#exitButton').show();
+
+//newIq=iQ*2;
+
+setTimeout(function(){
+
 $('#explain').text("your IQ is: "+ iQ+
 "Our result suggests your are below the average iQ in our society,but here is a way to improve it!"+
-"drag the chip into your brain, and you will be smart than ever");},5000);
+"drag the chip into your brain, and you will be smart than ever");
+dragdrop($('#chip'),$('#imgContainer'),$('#startlearn'));
 
-$('#checking').droppable({
-drop: function( event, ui ){
-  iQ=newIq;
-$('#chip').hide();
-$('#checking').attr('src', 'assets/images/brain.jpg');
-$('#explain').text("congradulation! Your new IQ is: " + iQ + " You are as smart as AI now!");
+},5000);
+
+
 }
+
+function learnEffect(){
+  $('#startlearn').hide();
+  learnState=true;
+  iQ=iQ*2;
+  displayImg(brainImg,'yes');
+  let thisInfo="congradulation! Your new IQ is: " + iQ+ " You are as smart as AI now!";
+  $('#explain').text(thisInfo);
+}
+
+function dragdrop(itemdrag,itemdrop,button,newImg){
+    itemdrag.show();
+  itemdrag.draggable();
+ itemdrop.droppable({
+drop: function( event, ui ){
+    button.show();
+    displayImg(newImg,'yes');
+   itemdrag.removeAttr('style');//reset
+   itemdrop.removeAttr('style');
+
+ }
 });
+
 
 }
 function quit(){
@@ -290,15 +337,13 @@ function quit(){
   $("#robotAssistant").hide();
 $('#backColor').css('zIndex','2');
 $('#backColor').hide();
-$("#checking").hide();
+$("#imgContainer").hide();
 $("#result").hide();
 $("#explain").text("");
 $('#exitButton').hide();
-$("#loading").hide();
 $('#police').hide();
 $("#bigscreen").hide();
 $("#myInput").hide();
-$("#shopping").hide();
 $("#buyStuff").hide();
 $('#chip').hide();
 }
