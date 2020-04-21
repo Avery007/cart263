@@ -44,39 +44,15 @@ function setup() {
 
   });
 
-//   $(document).keydown(function( e ) {
-//   var code = e.keyCode || e.which;
-//   switch (code) {
-//   case 65:
-//   $( "#screen1" ).animate({left: "-=50" });
-//   break;
-//  case 83:
-// $( "#screen1" ).animate({top: "+=50" });
-// break;
-//   case 68:
-// $( "#screen1" ).animate({left: "+=50" });
-// break;
-// case 87:
-// $( "#screen1" ).animate({top: "-=50" });
-// break;
-// default:
-//    alert('Oops, you cannot move the drone this way');
-// }
-// });
-
-
-
-$('#explain').text(textContent);
-
 enterScreen('#screen2',$("#buttonShop"));
 enterScreen('#screen3',$("#buttonHome"));
 enterScreen('#screen4',$("#buttonHospital"));
 enterScreen('#screen7',$("#buttonPolice"));
-enterScreen('#screen8',$("#exitButton"));
 enterScreen('#screen1',$("#droneButton"));
 enterScreen('#screen6',$("#learnButton"));
-enterScreen('#screen9',$("#jobButton"));
+enterScreen('#screen8',$("#jobButton"));
 enterScreen('#screen5',$("#dataCenter"));
+
 }
 
 function displayImg(imgId,showExit){
@@ -89,7 +65,7 @@ function displayImg(imgId,showExit){
 
 
 
-function moveDrone(){
+function moveDrone(){$('#backColor').css('opacity',0.5);
   $(document).keydown(function( e ) {resetDrone();
   var code = e.keyCode || e.which;
   switch (code) {
@@ -109,11 +85,11 @@ $( "#screen1" ).animate({top: "-=25" });
 break;
 case 13:
 $( "#screen1" ).removeAttr('style');
-$('#explain').text('Your have successifully delivered your stuff!');
+alert('Your have successifully delivered your stuff!');
 $(exitButton).show();
 break;
 default:
-
+     alert('Oops! You cannot move this way');
 }
 });
 
@@ -123,7 +99,6 @@ default:
 function resetDrone(){
 
 
-
 var w = window.innerWidth;
 var h = window.innerHeight;
 
@@ -131,7 +106,7 @@ let droneX= $('#screen1').offset();
 console.log(droneX.left);
 console.log(w);
 if(droneX.left<0||droneX.left>w||droneX.top<0||droneX.top>h){
-$( "#screen1" ).finish().css('top', '25%').css('left', '25%');
+$( "#screen1" ).finish().css('top', '50%').css('left', '50%');
   alert('You have moved out of the edge!Press');
  }
 }
@@ -147,20 +122,28 @@ function gotData(data){
     let instruction = getRandomElement(data.instructions);
 
    healthInfo = `Your health analysis is done. You have ${symptoms},${disorders} and ${phobia}. You need ${drug},and you should ${instruction}.`;
-    $('#explain').text(healthInfo);
+    //
+
+    let name = getRandomElement(data.names);
+    let id = Math.floor(Math.random(10000) * 10000000);
+
+     info= ` Your name: ${name}. Your Id number: ${id}`;
+    //  $('#explain').text(info+' Now we have you in the system and you can walk around');
+    // $('#explain').show();
+
 
 }
 
-function gotId(data){
-
-   let name = getRandomElement(data.names);
-   let id = Math.floor(Math.random(10000) * 10000000);
-
-    info= ` Your name: ${name}. Your Id number: ${id}`;
-    $('#explain').text(info+' Now we have you in the system and you can walk around');
-   $('#explain').show();
-
-}
+// function gotId(data){
+//
+//    let name = getRandomElement(data.names);
+//    let id = Math.floor(Math.random(10000) * 10000000);
+//
+//     info= ` Your name: ${name}. Your Id number: ${id}`;
+//     $('#explain').text(info+' Now we have you in the system and you can walk around');
+//    $('#explain').show();
+//
+// }
 
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -188,9 +171,7 @@ $(screen).click(
 
   button.click(function () {
 
-              $(screen).css('width','9vw');
-            $(screen).css('height','10vh');
-              $(screen).css('zIndex','1');
+              $(screen).removeAttr('style');
              button.hide();
 
 
@@ -234,7 +215,6 @@ $('#explain').show();
 else {alert(alertText);
    $('#backColor').hide();
 }
-//textContent=info + 'Your IQ:' + iQ;
 
 
 
@@ -275,9 +255,11 @@ function getId(){
 
 if(!registered){
 displayImg(dataImg,'yes');
-  $.getJSON('data/data.json',gotId);
+  $.getJSON('data/data.json',gotData);
 $('#police').show();
  registered=true;
+ $('#explain').text(info+' Now we have you in the system and you can walk around');
+
 }
 else{alert(alertText);
    $('#backColor').hide();
@@ -372,6 +354,7 @@ function report(){
    healthCheck=true;
   $('#checkinButton').hide();
     $.getJSON('data/data.json',gotData);
+        $('#explain').text(healthInfo);
   displayImg(checkimg);
 
   }
@@ -388,10 +371,8 @@ var info='Our machine is checking';
 }
 
 
-
-
-
-else{$('#backColor').hide();alert('sorry, without a digital id,you cannot use our advanced serves, please go to the police firstly ');}
+else{$('#backColor').hide();
+alert(alertText);}
 }
 
 
@@ -400,9 +381,8 @@ function learning(){
 displayImg(mindImg);
 textContent='Our AI expert is analyzing your IQ...';
 $('#explain').text(textContent);
-iQ = Math.floor(Math.random(70) * 100);
+iQ = Math.floor(Math.random() * 50)+70;
 
-//newIq=iQ*2;
 
 setTimeout(function(){
 
@@ -441,21 +421,10 @@ drop: function( event, ui ){
 
 }
 function quit(){
-  $("#home").hide();
-  $("#home").css('zIndex','1');
-  $("#robot0").hide();
-  $("#robot1").hide();
-  $("#robot2").hide();
-  $("#robotAssistant").hide();
-$('#backColor').css('zIndex','2');
-$('#backColor').hide();
-$("#imgContainer").hide();
-$("#result").hide();
+  $('img').removeAttr('style');
+  $('div').removeAttr('style');
+  $('button').removeAttr('style');
 $("#explain").text("");
-$('#exitButton').hide();
-$('#police').hide();
-$("#bigscreen").hide();
-$("#myInput").hide();
-$("#buyStuff").hide();
-$('#chip').hide();
+ $("#myInput").hide();
+
 }
