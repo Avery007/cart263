@@ -16,6 +16,9 @@ let textContent = "";
 let chosenJob = "";
 let id = "";
 let healthInfo;
+let yourname="";
+
+
 
 let iQ = 'unknow';
 let healthCheck = false
@@ -59,19 +62,31 @@ function setup() {
   enterScreen('#screen5', $("#dataCenter"));
 
 }
+function displayButton(buttonId,top,left) {
+  alert('hello');
+  buttonId.show();
+  buttonId.css('top',top);
+  buttonId.css('left',left);
 
-function displayImg(imgId, showExit,width,height) {
+}
+
+function displayText(content,width,height,top,left,fontSize) {
+  $('#explain').text(content);
+  $('#explain').css('width',width);
+  $('#explain').css('height',height);
+  $('#explain').css('top',top);
+  $('#explain').css('left',left);
+  $('#explain').css('fontSize',fontSize);
+}
+
+
+function displayImg(imgId, width,height) {
   $('#imgContainer').attr('src', imgId);
   $('#imgContainer').show();
   $('#imgContainer').css('width',width);
   $('#imgContainer').css('height',height);
-  if (showExit == 'yes') {
-    $('#exitButton').show();
-  }
-  else{$('#exitButton').show();}
+
 }
-
-
 
 function moveDrone() {
   if(registered){
@@ -153,6 +168,7 @@ function gotData(data) {
   //
 
   let name = getRandomElement(data.names);
+  yourname=`${name}`;
   let idNumber = Math.floor(Math.random() * 10000000+10000);
 
   id = ` Your name: ${name}. Your Id number: ${idNumber}`;
@@ -241,7 +257,9 @@ function checkData() {
     }
 
     else{toDo=toDo+ 'You have not tried drone';}
-    $('#explain').text(infos + toDo);
+    textContent=infos + toDo;
+    console.log(textContent);
+   displayText(textContent,'60vw','40vh','10%','10%');
 
   } else {
     displayAlert();
@@ -259,7 +277,9 @@ function getJob() {
     $('#backColor').hide();
   } else if (iQ < 100) {
     $('#explain').text('Your IQ is: ' + iQ);
-    displayImg(sorryImg,'yes');
+    displayImg(sorryImg);
+
+    displayButton($('#exitButton'),'70%','50%');
   } else if (iQ > 100) {
     $('#explain').text('Hello,you are very smart so we invite you to join our AI team! ');
     $('.flexContainer').css('display', 'flex');
@@ -268,7 +288,8 @@ function getJob() {
         chosenJob = $(this).find('img').attr('src');
 
         $('.flexContainer').hide();
-        displayImg(chosenJob,'yes','25vw','20vh');
+        displayImg(chosenJob,'25vw','20vh');
+        displayButton($('#exitButton'),'70%','50%');
       jobGot=true;
       });
 
@@ -282,7 +303,10 @@ function getId() {
 
     $('#police').show();
     $('#explain').text(id + ' We have you in the system and you can walk around now');
-    displayImg(dataImg, 'yes');
+    displayImg(dataImg);
+
+
+    displayButton($('#exitButton'),'30%','60%');
     registered = true;
   } else {
     alert('You have already an Id.No need to come again');
@@ -306,7 +330,7 @@ function buyStuff() {
 function shopping() {
 
   if (registered) { // cannot get in without an digital id
-  
+
     $('#explain').text('Welcome to the online shopping center! Please input your oder below. We will report spam texts or illegal deals to the police.');
     displayImg(shopimg, 'yes');
     $('#myInput').show();
@@ -328,13 +352,14 @@ function goHome() {
 
   if (registered) {
 
-    textContent = "Hello " + name + " Welcome back your smart home! You can use your voices to control the stuff.I am your personal robot assistant Alex,and I will show you how to enjoy your home,";
+    textContent = "Hello "+yourname +". Welcome back your smart home! You can control the eletronic devices by your voices. " +
+    " I am your personal robot assistant Alex,and I will show you how to enjoy your home. Now, say 'Turn on the light' to lighten the room ";
     activateAnnyang();
 
   } else {
-    textContent = "I am your personal robot assistant Alex,I want to remind you that you dont have an id for using the smart serves, please go to the police firstly.See you later";
+    textContent = "I am your personal robot assistant Alex. I want to remind you that you dont have a digital id for using the smart serves. Please go to the police station firstly. See you later";
   }
-  $('#explain').text(textContent);
+  displayText(textContent,'40vw','30vh','60%','30%','1.5vw');
 
   responsiveVoice.speak(textContent, 'UK English Male', {
     pitch: 4,
@@ -351,6 +376,7 @@ function activateAnnyang() {
       'turn on *the light': function() {
         $('#home').css('zIndex', 3);
         lightOn = true;
+       displayText("Now say 'watch Tv' to watch Tv",'20vw','40vh','65%','10%','2vw');
       }
     }; //end of let commands
 
@@ -360,9 +386,17 @@ function activateAnnyang() {
         $('#robot1').show();
         $('#robot2').show();
         tvOn = true;
+        responsiveVoice.speak('The annual robot marathon is on the air!Guess who is the winner this time! now all our channels are reporting this event.Enjoy it! ', 'UK English Male', {
+          pitch: 4,
+          rate: 1.2,
+          volume: 12,
 
+        });
+
+        displayText("You have done it! Do you enjoy your home?");
       }
     }
+
     annyang.addCommands(lighten);
     annyang.addCommands(tv);
     annyang.start();
@@ -384,9 +418,11 @@ function report() {
 
 function checkup() {
 
-  if (registered) {
+   if (registered) {
+     textContent="Welcome to our smart hospital ! Our lastest machine has accurate scaning function!"+
+     " It will analyze your DNA to detect any potential illness and give you advices.To have a try, drag the body image into the machine and get your report. ";
+   displayText(textContent,'34vw','50vh','20%','60%','2vw');
 
-    var info = 'Our machine is checking';
     $('#checkup').show();
     dragdrop($('#humanBody'), $('#checkup'), $('#checkinButton'), checking);
     }
@@ -394,6 +430,7 @@ function checkup() {
    else {
 displayAlert();
   }
+
 }
 
 function dragdrop(itemdrag, itemdrop, button, newImg) {
@@ -402,7 +439,7 @@ function dragdrop(itemdrag, itemdrop, button, newImg) {
   itemdrop.droppable({
     drop: function(event, ui) {
       button.show();
-      displayImg(newImg, 'yes');
+      displayImg(newImg);
       itemdrag.removeAttr('style'); //reset
       itemdrop.removeAttr('style');
 

@@ -68,8 +68,8 @@ z-index:-1;
 
 #screen1{
 position: absolute;
-bottom: 25%;
-right:10%;
+bottom: 21%;
+right:8%;
 width:20vw;
 height:20vh;
 z-index:0;
@@ -112,8 +112,8 @@ z-index:0;
 }
 #screen5{
 position: absolute;
-top:100px;
-left:500px;
+top:20%;
+left:40%;
 width:10vw;
 height:10vh;
 z-index:0;
@@ -147,10 +147,10 @@ display:none;
 
 #screen7{
 position: absolute;
-top:38%;
-left:60%;
-width:10vw;
-height:10vh;
+top:37%;
+left:58%;
+width:15vw;
+height:15vh;
 z-index:0;
 
 }
@@ -158,8 +158,8 @@ z-index:0;
 
 #screen8{
 position: absolute;
-top:70%;
-right:40%;
+bottom:20%;
+right:35%;
 width:10vw;
 height:10vh;
 z-index:0;
@@ -192,8 +192,8 @@ display:none;
 
 #robot0{
 position: absolute;
-top:37%;
-left:23%;
+top:36%;
+left:22.5%;
 width:17vw;
 height:20vh;
 z-index:5;
@@ -202,8 +202,8 @@ display:none;
 
 #robot1{
 position: absolute;
-top:37%;
-left:40%;
+top:36%;
+left:39.5%;
 width:17vw;
 height:20vh;
 z-index:5;
@@ -212,9 +212,9 @@ display:none;
 
 #robot2{
 position: absolute;
-top:37%;
+top:36%;
 left:55%;
-width:15.7vw;
+width:15.2vw;
 height:20vh;
 z-index:5;
 display:none;
@@ -222,8 +222,8 @@ display:none;
 
 #checkup{
 position: absolute;
-top:30%;
-left:40%;
+top:50%;
+left:30%;
 width:15vw;
 height:40vh;
 z-index:4;
@@ -235,7 +235,7 @@ display:none;
 
 #humanBody{
   position: absolute;
-  top:20%;
+  top:10%;
   left:5%;
   width:5vw;
   height:20vh;
