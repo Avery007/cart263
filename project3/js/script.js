@@ -63,7 +63,6 @@ function setup() {
 
 }
 function displayButton(buttonId,top,left) {
-  alert('hello');
   buttonId.show();
   buttonId.css('top',top);
   buttonId.css('left',left);
@@ -88,9 +87,78 @@ function displayImg(imgId, width,height) {
 
 }
 
+function displayAlert(){
+ alert(alertText);
+ $('#backColor').hide();
+
+}
+
+
+function gotData(data) {
+
+  let symptoms = getRandomElement(data.symptoms);
+  let disorders = getRandomElement(data.disorders);
+  let phobia = getRandomElement(data.phobia);
+  let drug = getRandomElement(data.drugs);
+  let instruction = getRandomElement(data.instructions);
+
+  healthInfo = `Your health analysis is done. You have ${symptoms}, ${disorders} and ${phobia}. You need ${drug}, and you should ${instruction}.`;
+
+
+  let name = getRandomElement(data.names);
+  yourname=`${name}`;
+  let idNumber = Math.floor(Math.random() * 10000000+10000);
+
+  id = ` Your name: ${name}. Your Id number: ${idNumber}`;
+
+
+}
+
+
+function getRandomElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+function enterScreen(screen, button) {
+
+  $(screen).click(
+    function() {
+
+      $(screen).css('width', '40vw');
+      $(screen).css('height', '50vh');
+      $(screen).css('zIndex', '3');
+      $('#backColor').show();
+      button.show();
+      button.position({
+        my: "left top",
+        at: "left top",
+        of: screen
+
+      });
+
+
+    });
+
+
+
+
+  button.click(function() {
+
+    $(screen).removeAttr('style');
+    button.hide();
+
+
+  });
+
+
+}
+
+
 function moveDrone() {
   if(registered){
+  displayText('Press ASDW to move the drone. Press Enter key to finish the deliver','20vw','20vh','60%','70%');
   $('#backColor').css('opacity', 0.5);
+
   $(document).keydown(function(e) {
     resetDrone();
     var code = e.keyCode || e.which;
@@ -133,11 +201,7 @@ else{displayAlert();}
 
 }
 
-function displayAlert(){
- alert(alertText);
- $('#backColor').hide();
 
-}
 
 function resetDrone() {
 
@@ -146,75 +210,15 @@ function resetDrone() {
   var h = window.innerHeight;
 
   let droneX = $('#screen1').offset();
-  console.log(droneX.left);
-  console.log(w);
+
   if (droneX.left < 0 || droneX.left > w || droneX.top < 0 || droneX.top > h) {
     $("#screen1").finish().css('top', '50%').css('left', '50%');
-    alert('You have moved out of the edge!');
+    alert('You have moved out of the edge! We will send the drone back to the center');
   }
 }
 
 
 
-function gotData(data) {
-
-  let symptoms = getRandomElement(data.symptoms);
-  let disorders = getRandomElement(data.disorders);
-  let phobia = getRandomElement(data.phobia);
-  let drug = getRandomElement(data.drugs);
-  let instruction = getRandomElement(data.instructions);
-
-  healthInfo = `Your health analysis is done. You have ${symptoms},${disorders} and ${phobia}. You need ${drug},and you should ${instruction}.`;
-  //
-
-  let name = getRandomElement(data.names);
-  yourname=`${name}`;
-  let idNumber = Math.floor(Math.random() * 10000000+10000);
-
-  id = ` Your name: ${name}. Your Id number: ${idNumber}`;
-  //  $('#explain').text(info+' Now we have you in the system and you can walk around');
-  // $('#explain').show();
-
-
-}
-
-
-function getRandomElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
-function enterScreen(screen, button) {
-
-  $(screen).click(
-    function() {
-      $(screen).css('width', '40vw');
-      $(screen).css('height', '40vh');
-      $(screen).css('zIndex', '3');
-      $('#backColor').show();
-      button.show();
-      button.position({
-        my: "left bottom",
-        at: "left bottom",
-        of: screen
-
-      });
-
-
-    });
-
-
-
-
-  button.click(function() {
-
-    $(screen).removeAttr('style');
-    button.hide();
-
-
-  });
-
-
-}
 
 function checkData() {
   if (registered) {
@@ -223,7 +227,7 @@ function checkData() {
     if (healthCheck) {
       infos = infos + healthInfo;
     } else {
-      toDo = 'You have not done medical checkup\n';
+      toDo = 'You have not done medical checkup ';
     }
     if(jobGot){
       infos = infos + ' Your job is recorded in the image';
@@ -278,8 +282,8 @@ function getJob() {
   } else if (iQ < 100) {
     $('#explain').text('Your IQ is: ' + iQ);
     displayImg(sorryImg);
-
     displayButton($('#exitButton'),'70%','50%');
+
   } else if (iQ > 100) {
     $('#explain').text('Hello,you are very smart so we invite you to join our AI team! ');
     $('.flexContainer').css('display', 'flex');
@@ -290,6 +294,7 @@ function getJob() {
         $('.flexContainer').hide();
         displayImg(chosenJob,'25vw','20vh');
         displayButton($('#exitButton'),'70%','50%');
+        $('#explain').text('Congradulations! You have a job now ');
       jobGot=true;
       });
 
@@ -301,15 +306,16 @@ function getId() {
 
   if (!registered) {
 
+
     $('#police').show();
-    $('#explain').text(id + ' We have you in the system and you can walk around now');
+    $('#explain').text(id + '.  We have you in the system and you can walk around now');
     displayImg(dataImg);
 
 
     displayButton($('#exitButton'),'30%','60%');
     registered = true;
   } else {
-    alert('You have already an Id.No need to come again');
+    alert('You already have an Id.No need to come again');
     $('#backColor').hide();
   }
 }
@@ -331,10 +337,12 @@ function shopping() {
 
   if (registered) { // cannot get in without an digital id
 
-    $('#explain').text('Welcome to the online shopping center! Please input your oder below. We will report spam texts or illegal deals to the police.');
-    displayImg(shopimg, 'yes');
+    textContent='Welcome to the online shopping center! Please input your oder below. We will report spam texts or illegal deals to the police.';
+
+    displayText(textContent,'22vw','40vh','10%','73%','1.5vw');
+    displayImg(shopimg);
+    displayButton($('#exitButton'),'75%','75%');
     $('#myInput').show();
-    $('#myNumber').show();
     $('#buyStuff').show();
     $('#bigscreen').show();
 
@@ -409,7 +417,7 @@ function activateAnnyang() {
 
 function report() {
   healthCheck = true;
-  $('#checkinButton').hide();
+  $('#reportButton').hide();
 
   $('#explain').text(healthInfo);
   displayImg(checkimg);
@@ -421,10 +429,10 @@ function checkup() {
    if (registered) {
      textContent="Welcome to our smart hospital ! Our lastest machine has accurate scaning function!"+
      " It will analyze your DNA to detect any potential illness and give you advices.To have a try, drag the body image into the machine and get your report. ";
-   displayText(textContent,'34vw','50vh','20%','60%','2vw');
-
+    displayText(textContent,'34vw','50vh','20%','60%','2vw');
+    displayButton($('#exitButton'),'77%','70%');
     $('#checkup').show();
-    dragdrop($('#humanBody'), $('#checkup'), $('#checkinButton'), checking);
+    dragdrop($('#humanBody'), $('#checkup'), $('#reportButton'), checking);
     }
 
    else {
@@ -453,16 +461,16 @@ function learning() {
   if(registered){
 
   displayImg(mindImg);
-  textContent = 'Our AI expert is analyzing your IQ...';
+  textContent = 'Our AI expert is analyzing your IQ...Please be patient';
   $('#explain').text(textContent);
   iQ = Math.floor(Math.random() * 50) + 70;
 
 
   setTimeout(function() {
-
-    $('#explain').text("your IQ is: " + iQ +
-      "Our result suggests your are below the average iQ in our society,but here is a way to improve it!" +
-      "drag the chip into your brain, and you will be smart than ever");
+    displayButton($('#exitButton'),'59%','52%');
+    $('#explain').text("Your IQ is: " + iQ +
+      ". Our result suggests that your are below the average iQ in our society,but here is a way to improve it!" +
+      " Drag the chip into your brain, and you will be smart than ever");
     dragdrop($('#chip'), $('#imgContainer'), $('#startlearn'));
 
   }, 5000);
@@ -476,8 +484,8 @@ function learnEffect() {
   $('#startlearn').hide();
   learnState = true;
   iQ = iQ * 2;
-  displayImg(brainImg, 'yes');
-  let thisInfo = "congradulation! Your new IQ is: " + iQ + " You are as smart as AI now!";
+  displayImg(brainImg);
+  let thisInfo = "Congradulations! Your new IQ is: " + iQ + ". You are as smart as AI now!";
   $('#explain').text(thisInfo);
 }
 
