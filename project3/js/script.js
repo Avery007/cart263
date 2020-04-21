@@ -19,7 +19,10 @@ let healthInfo;
 let iQ=0;
 let healthCheck=false
 let learnState=false;
+let buyState=false;
 let chosenJob="";
+let lightOn=false;
+let tvOn=false;
 
 let shopimg="./assets/images/shop.jpg";
 let checkimg='assets/images/result.jpg';
@@ -152,7 +155,23 @@ function checkData(){
     if(!learnState){
       toDo=toDo+ ' You have not finished your learning';
     }
+    else{ infos=infos+ ' Your job is recorded in the image';
+      $('#imgContainer').show();
+    $('#imgContainer').attr('src',chosenJob);}
+    if(buyState){
+    infos=infos + ' You went to the shop, and you left a message: ' + inputText;
 
+    }
+   else{toDo=toDo+'You have not ordered anything in the shopping center';}
+
+   if(tvOn){
+     infos=infos+ ' You went back home and turn on the light and watched robots Tv show';
+}
+
+ if(!tvOn&&lightOn){
+  infos=infos + ' You went back home and turn on the light, but you didnt watch Tv show';
+}
+  else if(!tvOn&&!lightOn){ infos=infos+ ' You have not used the smart serves at home';}
 
 $('#explain').text(infos+toDo);
 $('#explain').show();
@@ -169,7 +188,7 @@ else {alert(alertText);
 
 function getJob(){
   $('#exitButton').show();
-if(iQ==0){
+ if(iQ==0){
   alert(alertText);
   $('#backColor').hide();
 }
@@ -211,6 +230,7 @@ else{alert(alertText);
 }
 
 function buyStuff(){
+  buyState=true;
   inputText = $("#myInput").val();
   $('#explain').text("Thanks for your order! We will comfirm the order and deliver it to your home soon");
   responsiveVoice.speak('We have got your message:'+inputText, 'UK English Female', {
@@ -272,7 +292,7 @@ function activateAnnyang(){
 
        'turn on *the light': function() {
   $('#home').css('zIndex',3);
-
+  lightOn=true;
       }
     }; //end of let commands
 
@@ -280,7 +300,7 @@ function activateAnnyang(){
       $('#robot0').show();
       $('#robot1').show();
       $('#robot2').show();
-
+     tvOn=true;
 
     }
   }
