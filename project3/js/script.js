@@ -20,7 +20,7 @@ let yourname="";
 
 
 
-let iQ = 'unknow';
+let iQ = ' You have not done IQ test. ';
 let healthCheck = false
 let learnState = false;
 let buyState = false;
@@ -36,6 +36,7 @@ let mindImg = 'assets/images/mind.png';
 let brainImg = 'assets/images/brain.jpg';
 let dataImg = 'assets/images/id.gif';
 let sorryImg = 'assets/images/sorryscreen.jpg';
+let bossImg =  'assets/images/boss1.png';
 
 let alertText = 'You dont have a legal digital ID to access our serves.Please go to the police office firstly';
 
@@ -79,12 +80,13 @@ function displayText(content,width,height,top,left,fontSize) {
 }
 
 
-function displayImg(imgId, width,height) {
+function displayImg(imgId, width,height,top,left) {
   $('#imgContainer').attr('src', imgId);
   $('#imgContainer').show();
   $('#imgContainer').css('width',width);
   $('#imgContainer').css('height',height);
-
+  $('#imgContainer').css('top',top);
+  $('#imgContainer').css('left',left);
 }
 
 function displayAlert(){
@@ -107,9 +109,9 @@ function gotData(data) {
 
   let name = getRandomElement(data.names);
   yourname=`${name}`;
-  let idNumber = Math.floor(Math.random() * 10000000+10000);
+  let idNumber = Math.floor(Math.random() * 10000000)+10000;
 
-  id = ` Your name: ${name}. Your Id number: ${idNumber}`;
+  id = ` Your name: ${name}. Your Id number : ${idNumber}. `;
 
 
 }
@@ -155,32 +157,34 @@ function enterScreen(screen, button) {
 
 
 function moveDrone() {
+
   if(registered){
   displayText('Press ASDW to move the drone. Press Enter key to finish the deliver','20vw','20vh','60%','70%');
   $('#backColor').css('opacity', 0.5);
 
   $(document).keydown(function(e) {
+
     resetDrone();
     var code = e.keyCode || e.which;
     switch (code) {
 
-      case 65:
+      case 37:
         $("#screen1").animate({
           left: "-=25"
         });
 
         break;
-      case 83:
+      case 40:
         $("#screen1").animate({
           top: "+=25"
         });
         break;
-      case 68:
+      case 39:
         $("#screen1").animate({
           left: "+=25"
         });
         break;
-      case 87:
+      case 38:
         $("#screen1").animate({
           top: "-=25"
         });
@@ -191,8 +195,7 @@ function moveDrone() {
         $(exitButton).show();
         droneUsed=true;
         break;
-      default:
-        alert('Oops! You cannot move this way');
+      
     }
   });
 
@@ -222,49 +225,50 @@ function resetDrone() {
 
 function checkData() {
   if (registered) {
-    let infos = id + iQ;
+    let infos = id + ' Your IQ info: ' + iQ;
     let toDo = '';
     if (healthCheck) {
       infos = infos + healthInfo;
     } else {
-      toDo = 'You have not done medical checkup ';
+      toDo = ' You have not done medical checkup. ';
     }
     if(jobGot){
-      infos = infos + ' Your job is recorded in the image';
-      $('#imgContainer').show();
-      $('#imgContainer').attr('src', chosenJob);
+      displayImg(chosenJob,'20vw','20vh','10%','75%');
+      infos = infos + ' Your job is recorded in the image. ';
+
     }
     else if (!learnState) {
-      toDo = toDo + ' You have not finished your learning and you dont have a job';
+      toDo = toDo + ' You have not finished your learning and you dont have a job.';
     }
-    else{  toDo = toDo + ' You have finished your learning but you dont have a job';}
+    else{  toDo = toDo + ' You have finished your learning but you dont have a job. ';}
 
     if (buyState) {
       infos = infos + ' You went to the shop, and you left a message: ' + inputText;
 
     } else {
-      toDo = toDo + 'You have not ordered anything in the shopping center';
+      toDo = toDo + ' You have not ordered anything in the shopping center. ';
     }
 
     if (tvOn) {
-      infos = infos + ' You went back home and turn on the light and watched robots Tv show';
+      infos = infos + ' You went back home and turn on the light and watched robots Tv show.';
     }
 
     if (!tvOn && lightOn) {
-      infos = infos + ' You went back home and turn on the light, but you didnt watch Tv show';
+      infos = infos + ' You went back home and turn on the light, but you didnt watch Tv show. ';
     } else if (!tvOn && !lightOn) {
-      infos = infos + ' You have not used the smart serves at home';
+      infos = infos + ' You have not used the smart serves at home. ';
     }
 
     if(droneUsed){
-      infos=infos+ ' You have used smart drone to deliver your stuff';
+      infos=infos+ ' You have used smart drone to deliver your stuff. ';
     }
 
-    else{toDo=toDo+ 'You have not tried drone';}
+    else{toDo=toDo+ ' You have not tried drone. ';}
     textContent=infos + toDo;
     console.log(textContent);
-   displayText(textContent,'60vw','40vh','10%','10%');
-
+   displayText(textContent,'60vw','60vh','10%','10%','1.5vw');
+     $('#bossImg').show();
+    displayButton($('#exitButton'),'80%','50%');
   } else {
     displayAlert();
   }
@@ -276,7 +280,7 @@ function checkData() {
 
 function getJob() {
 
-  if (iQ == 'unknow') {
+  if (iQ == ' You have not done IQ test. ') {
     alert('Please go to the education center firstly');
     $('#backColor').hide();
   } else if (iQ < 100) {
@@ -459,6 +463,7 @@ function dragdrop(itemdrag, itemdrop, button, newImg) {
 
 function learning() {
   if(registered){
+    if(!learnState){
 
   displayImg(mindImg);
   textContent = 'Our AI expert is analyzing your IQ...Please be patient';
@@ -475,6 +480,10 @@ function learning() {
 
   }, 5000);
 
+}
+
+else{alert('You have finished your learning!');
+      $('#backColor').hide();}
 }
 
 else{ displayAlert();}

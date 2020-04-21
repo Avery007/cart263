@@ -252,7 +252,15 @@ display:none;
   z-index:6;
   display:none;
 }
-
+#bossImg{
+  position: absolute;
+  width:30vw;
+  height:25vh;
+  bottom:5%;
+  right:35%;
+  z-index:4;
+  display:none;
+}
 #imgContainer{
   position: absolute;
   top:20%;
