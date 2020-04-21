@@ -343,7 +343,11 @@ display:none;
     display: none;
   }
 
-
+  #dataCenter {
+    position: absolute;
+    z-index: 4;
+    display: none;
+  }
 
   #buttonPolice {
     position: absolute;

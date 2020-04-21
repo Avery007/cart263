@@ -13,8 +13,11 @@ to match your project! Write JavaScript to do amazing things below!
 let inputText="";
 let registered=false;
 let textContent="";
-let name="";
+let info="";
+let healthInfo;
+
 let iQ=0;
+let healthCheck=false
 let learnState=false;
 let chosenJob="";
 
@@ -25,6 +28,8 @@ let mindImg='assets/images/mind.png';
 let brainImg='assets/images/brain.jpg';
 let dataImg='assets/images/id.gif';
 let sorryImg='assets/images/sorryscreen.jpg';
+
+let alertText='You dont have a legal digital ID to access our serves.Please go to the police office firstly';
 $(document).ready(setup);
 
 
@@ -62,6 +67,7 @@ enterScreen('#screen8',$("#exitButton"));
 enterScreen('#screen1',$("#droneButton"));
 enterScreen('#screen6',$("#learnButton"));
 enterScreen('#screen9',$("#jobButton"));
+enterScreen('#screen5',$("#dataCenter"));
 }
 
 function displayImg(imgId,showExit){
@@ -82,18 +88,18 @@ function gotData(data){
     let drug = getRandomElement(data.drugs);
     let instruction = getRandomElement(data.instructions);
 
-   let description = `Your analysis is done. You have ${symptoms},${disorders} and ${phobia}. You need ${drug},and you should ${instruction}.`;
-    $('#explain').text(description);
+   healthInfo = `Your health analysis is done. You have ${symptoms},${disorders} and ${phobia}. You need ${drug},and you should ${instruction}.`;
+    $('#explain').text(healthInfo);
 
 }
 
 function gotId(data){
 
-    name = getRandomElement(data.names);
+   let name = getRandomElement(data.names);
    let id = Math.floor(Math.random(10000) * 10000000);
 
-   let info= ` Your name: ${name}. Your Id number: ${id}. Now we have you in the system and you can walk around`;
-    $('#explain').text(info);
+    info= ` Your name: ${name}. Your Id number: ${id}`;
+    $('#explain').text(info+' Now we have you in the system and you can walk around');
    $('#explain').show();
 
 }
@@ -135,10 +141,36 @@ $(screen).click(
 
 }
 
+function checkData(){
+  if(registered){
+ let infos=info;let toDo='';
+    if(healthCheck){
+      infos=infos+healthInfo;
+    }
+    else{toDo='You have not done medical checkup\n';
+    }
+    if(!learnState){
+      toDo=toDo+ ' You have not finished your learning';
+    }
+
+
+$('#explain').text(infos+toDo);
+$('#explain').show();
+}
+else {alert(alertText);
+   $('#backColor').hide();
+}
+//textContent=info + 'Your IQ:' + iQ;
+
+
+
+}
+
+
 function getJob(){
   $('#exitButton').show();
 if(iQ==0){
-  alert('In order to get a suitable job,please go to the education center firstly');
+  alert(alertText);
   $('#backColor').hide();
 }
 
@@ -173,7 +205,7 @@ displayImg(dataImg,'yes');
 $('#police').show();
  registered=true;
 }
-else{alert('You have already got an id,no need to come again!');
+else{alert(alertText);
    $('#backColor').hide();
      }
 }
@@ -204,7 +236,7 @@ function shopping(){
 
 
 }
-else{ alert('Sorry, you cannot go shopping without a digital id, please go to the police firstly');
+else{ alert(alertText);
 $('#backColor').hide();
             }
 }
@@ -262,6 +294,7 @@ function activateAnnyang(){
 
 }
 function report(){
+   healthCheck=true;
   $('#checkinButton').hide();
     $.getJSON('data/data.json',gotData);
   displayImg(checkimg);
@@ -273,7 +306,7 @@ if(registered)
 {
 
 var info='Our machine is checking';
-var checkState=false;
+
     $('#checkup').show();
   dragdrop($('#humanBody'),$('#checkup'),$('#checkinButton'),checking);
 
