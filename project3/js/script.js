@@ -44,21 +44,27 @@ function setup() {
 
   });
 
+//   $(document).keydown(function( e ) {
+//   var code = e.keyCode || e.which;
+//   switch (code) {
+//   case 65:
+//   $( "#screen1" ).animate({left: "-=50" });
+//   break;
+//  case 83:
+// $( "#screen1" ).animate({top: "+=50" });
+// break;
+//   case 68:
+// $( "#screen1" ).animate({left: "+=50" });
+// break;
+// case 87:
+// $( "#screen1" ).animate({top: "-=50" });
+// break;
+// default:
+//    alert('Oops, you cannot move the drone this way');
+// }
+// });
 
 
-
-
-  // $( "#screen1" ).keydown(function( e ) {
-  // var code = e.keyCode || e.which;
-  // if ( code == 65){
-  //   alert('hello');
-  //   //$( "#screen1" ).animate({
-  //    //left: "+=50",
-  // }
-  // else{alert('hello');}
-  //
-  //
-  // });
 
 $('#explain').text(textContent);
 
@@ -79,6 +85,55 @@ function displayImg(imgId,showExit){
   if(showExit=='yes'){
   $('#exitButton').show();
 }
+}
+
+
+
+function moveDrone(){
+  $(document).keydown(function( e ) {resetDrone();
+  var code = e.keyCode || e.which;
+  switch (code) {
+
+  case 65:
+  $( "#screen1" ).animate({left: "-=25" });
+
+  break;
+ case 83:
+$( "#screen1" ).animate({top: "+=25" });
+break;
+  case 68:
+$( "#screen1" ).animate({left: "+=25" });
+break;
+case 87:
+$( "#screen1" ).animate({top: "-=25" });
+break;
+case 13:
+$( "#screen1" ).removeAttr('style');
+$('#explain').text('Your have successifully delivered your stuff!');
+$(exitButton).show();
+break;
+default:
+
+}
+});
+
+}
+
+
+function resetDrone(){
+
+
+
+var w = window.innerWidth;
+var h = window.innerHeight;
+
+let droneX= $('#screen1').offset();
+console.log(droneX.left);
+console.log(w);
+if(droneX.left<0||droneX.left>w||droneX.top<0||droneX.top>h){
+$( "#screen1" ).finish().css('top', '25%').css('left', '25%');
+  alert('You have moved out of the edge!Press');
+ }
 }
 
 
