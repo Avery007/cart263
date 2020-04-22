@@ -5,6 +5,12 @@
 Travel to Smart city in the future
 Avery Deng
 
+This project is a simulation of life in the smart cities of the future.
+It is trying to present some of those concerns regarding the smart future in the field of education, job, shopping, medical
+checkup, delivery system, surveillance, and smart home.
+There are 8 different images representing different aspects for players to explore,
+but in order to get into those sections, the traveler must firstly go to the police office and get an id.
+All the situations in this proejct suggest something may happen in reality, but can also be prevented.
 
 
 *********************************************************************/
