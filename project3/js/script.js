@@ -256,7 +256,7 @@ function resetDrone() {
 function checkData() {
   //check if they registered in the police station
   if (registered) {
-    let infos = id + ' Your IQ info: ' + iQ; //display ID info and IQ
+    let infos = id + ' Your IQ info: ' + iQ + ". "; //display ID info and IQ
     let toDo = ''; // the things they have not done
     //check if they get health report
     if (healthCheck) {
