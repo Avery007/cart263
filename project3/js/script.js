@@ -45,10 +45,12 @@ let alertText = 'You dont have a legal digital ID to access our serves.Please go
 
 
 $(document).ready(setup);
+
 //function setup the cover image
 function setup(){
+  //display cover img
    $('.background').attr('src', './assets/images/cover.jpg');
-
+   $('#startJourney').show();
 }
 //start the game
 function startJourney() {
