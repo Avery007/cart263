@@ -1,4 +1,5 @@
 This project is a simulation of life in the smart cities of the future.
+
 With the fast development of artificial technology, we are heading to the age of Internet of Things. Many scientists have predicted that
 human society will more and more rely on computer technology in the near future. The proprosation of smart city suggests that almost 
 everything is going to be chipped. We will have smart home, smart shopping center, smart hospital, smart education，etc. We are building 
