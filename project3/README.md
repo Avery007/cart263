@@ -8,7 +8,7 @@ technological singularity. This is a turning point that machines don’t just se
 human and computers is right at the corner.The concept of brain-computer interface will even give birth to human-AI hybrids. While some 
 people think those advanced technology will bring huge convenience into our life. There are also concerns about privacy and surveillance issues. 
 Some experts are also worried that the upcoming AI system wont improve human society, but it will make human souls further get lost in the virtual 
-world. While some think the trend of advanced AI is inevitable,I strongly believe that the future is never fixed, but human collective have the 
+world. While some think the trend of advanced AI is inevitable,I strongly believe that the future is never set in stone, but human collective have the 
 power to shape what they want, and if we want to have a better future, we need to understand both pros and cons of the things and make decisions 
 carefully.
 
