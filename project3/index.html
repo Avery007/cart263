@@ -1,97 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
-    <!-- CSS stylesheet(s) -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
-    <!-- jQuery and jQuery UI -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
+  <!-- CSS stylesheet(s) -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <!-- jQuery and jQuery UI -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-      crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 
-<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-    <!-- Library script(s) -->
-    <!-- Add your required libraries here either as local files or CDN-hosted files -->
-    <!-- Including rita -->
-    <script src="js/libraries/rita.min.js" content="text/javascript"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
-    <!-- Include annyang! -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+  <!-- including responsiveVoice -->
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 
-    <!-- My script(s) -->
-    <script src="js/script.js"></script>
-  </head>
+  <!-- Including rita -->
+  <script src="js/libraries/rita.min.js" content="text/javascript"></script>
 
-  <body>
-<img class="background" src=".\assets\images\city0.jpg">
+  <!-- Include annyang! -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 
+  <!-- My script(s) -->
+  <script src="js/script.js"></script>
+</head>
 
-<img id="screen1" src=".\assets\images\drone0.png">
-<img id="screen2" src=".\assets\images\shopping.png">
-<img id="screen3" src=".\assets\images\home.jpg">
-<img id="screen4" src=".\assets\images\hospital.jpg">
-<img id="screen5" src=".\assets\images\data.png">
-<img id="screen6" src=".\assets\images\learning.jpg">
-<img id="screen7" src=".\assets\images\poli.png">
-<img id="screen8" src=".\assets\images\jobmarket.jpg">
-<div id="backColor" > </div>
+<body>
+    <!-- background -->
+  <img class="background" src=".\assets\images\city0.jpg">
+  <!-- sections -->
+  <img id="screen1" src=".\assets\images\drone0.png">
+  <img id="screen2" src=".\assets\images\shopping.png">
+  <img id="screen3" src=".\assets\images\home.jpg">
+  <img id="screen4" src=".\assets\images\hospital.jpg">
+  <img id="screen5" src=".\assets\images\data.png">
+  <img id="screen6" src=".\assets\images\learning.jpg">
+  <img id="screen7" src=".\assets\images\poli.png">
+  <img id="screen8" src=".\assets\images\jobmarket.jpg">
+    <!-- background color -->
+  <div id="backColor"> </div>
+  <!-- img -->
+  <img id="home" src=".\assets\images\film.jpg">
+  <img id="robot0" src=".\assets\images\robot0.gif">
+  <img id="robot1" src=".\assets\images\robot1.gif">
+  <img id="robot2" src=".\assets\images\robot2.gif">
+  <img id="robotAssistant" src=".\assets\images\robot.png">
+  <img id="bossImg" src=".\assets\images\boss1.png">
+  <img id="bigscreen" src=".\assets\images\bigscreen.png">
+  <img id="checkup" src=".\assets\images\checkup.png">
+  <img id="humanBody" src=".\assets\images\human.png">
+  <img id="chip" src=".\assets\images\chip.png">
+  <img id="imgContainer">
+  <img id="police" src=".\assets\images\police.png">
+  <!-- texts -->
+  <div id='explain'></div>
+  <textarea id="myInput" rows="12" cols="35">Tell us what you want to buy.</textarea>
+    <!-- My button-->
+  <button id="buyStuff" class="buttonClass" onclick="buyStuff()"> Submit</button>
+  <button id="buttonShop" class="buttonClass" onclick="shopping()"> Start</button>
+  <button id="buttonHome" class="buttonClass" onclick="goHome()"> Start</button>
+  <button id="buttonHospital" class="buttonClass" onclick="checkup()"> Start</button>
+  <button id="buttonPolice" class="buttonClass" onclick="getId()"> Start</button>
+  <button id="exitButton" class="buttonClass" onclick="quit()"> Exit</button>
+  <button id="droneButton" class="buttonClass" onclick="moveDrone()"> Start</button>
+  <button id="learnButton" class="buttonClass" onclick="learning()"> Start</button>
+  <button id="jobButton" class="buttonClass" onclick="getJob()"> Start</button>
+  <button id="reportButton" class="buttonClass" onclick="report()"> Get your report</button>
+  <button id="startlearn" class="buttonClass" onclick="learnEffect()"> Start the process</button>
+  <button id="dataCenter" class="buttonClass" onclick="checkData()"> See your recored data </button>
 
-
-
-<img id="home" src=".\assets\images\film.jpg">
-<img id="robot0" src=".\assets\images\robot0.gif">
-<img id="robot1" src=".\assets\images\robot1.gif">
-<img id="robot2" src=".\assets\images\robot2.gif">
-<img id="robotAssistant" src=".\assets\images\robot.png">
-<img id="bossImg" src=".\assets\images\boss1.png">
-<img id="bigscreen" src=".\assets\images\bigscreen.png">
-<img id="checkup" src=".\assets\images\checkup.png">
-<img id="humanBody" src=".\assets\images\human.png">
-<img id="chip" src=".\assets\images\chip.png">
-<img id="imgContainer" >
-<img id="police" src=".\assets\images\police.png">
-
-<div id='explain'></div>
-<textarea id="myInput" rows = "12" cols = "35">Tell us what you want to buy.</textarea>
-
-<button id="buyStuff"  class="buttonClass" onclick="buyStuff()"> Submit</button>
-
-
-<button id="buttonShop" class="buttonClass" onclick="shopping()"> Start</button>
-<button id="buttonHome" class="buttonClass" onclick="goHome()"> Start</button>
-<button id="buttonHospital" class="buttonClass" onclick="checkup()"> Start</button>
-<button id="buttonPolice" class="buttonClass" onclick="getId()"> Start</button>
-<button id="exitButton" class="buttonClass" onclick="quit()"> Exit</button>
-<button id="droneButton" class="buttonClass" onclick="moveDrone()"> Start</button>
-<button id="learnButton" class="buttonClass" onclick="learning()"> Start</button>
-<button id="jobButton" class="buttonClass" onclick="getJob()"> Start</button>
-<button id="reportButton" class="buttonClass" onclick="report()"> Get your report</button>
-<button id="startlearn" class="buttonClass" onclick="learnEffect()"> Start the process</button>
-<button id="dataCenter" class="buttonClass" onclick="checkData()"> start </button>
-<div class="flexContainer">
-  <span><img src=".\assets\images\job1.jpg"></span>
-  <span><img src=".\assets\images\job2.jpg"></span>
-  <span><img src=".\assets\images\job3.jpg"></span>
-  <span><img src=".\assets\images\job4.jpg"></span>
-  <span><img src=".\assets\images\job5.jpg"></span>
-  <span><img src=".\assets\images\job6.jpg"></span>
-  <span><img src=".\assets\images\job7.jpg"></span>
-  <span><img src=".\assets\images\job8.jpg"></span>
-  <span><img src=".\assets\images\job9.jpg"></span>
-</div>
+    <!-- flexbox that contains job info -->
+  <div class="flexContainer">
+    <span><img src=".\assets\images\job1.jpg"></span>
+    <span><img src=".\assets\images\job2.jpg"></span>
+    <span><img src=".\assets\images\job3.jpg"></span>
+    <span><img src=".\assets\images\job4.jpg"></span>
+    <span><img src=".\assets\images\job5.jpg"></span>
+    <span><img src=".\assets\images\job6.jpg"></span>
+    <span><img src=".\assets\images\job7.jpg"></span>
+    <span><img src=".\assets\images\job8.jpg"></span>
+    <span><img src=".\assets\images\job9.jpg"></span>
+  </div>
 
 
-  </body>
+</body>
 
 </html>

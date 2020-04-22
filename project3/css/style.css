@@ -1,31 +1,27 @@
 body {
-overflow: hidden;
+  overflow: hidden;
 }
 
-.background{
-
-width:100vw;
-height:100vh;
-z-index:-1;
-
+.background {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 
-#bigscreen{
+#bigscreen {
   position: absolute;
-  top:2%;
-  right:2%;
+  top: 2%;
+  right: 2%;
   height: 40vh;
-  width:30vw;
-  z-index:5;
+  width: 30vw;
+  z-index: 5;
   display: none;
-
-
 }
 
 #myInput {
   position: absolute;
-  top:50%;
-  right:5%;
+  top: 50%;
+  right: 5%;
   height: 20vh;
   width: 20vw;
   padding: 12px 20px;
@@ -34,363 +30,329 @@ z-index:-1;
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
-  z-index:5;
-  display:none;
-
+  z-index: 5;
+  display: none;
 }
-
 
 #explain {
   position: absolute;
-  top:7%;
-  right:5%;
-  width:20vw;
-  height:40vh;
+  top: 7%;
+  right: 5%;
+  width: 20vw;
+  height: 40vh;
   font-size: 2vw;
   color: #fffa90;
   z-index: 6;
-
 }
 
-#backColor{
+#backColor {
   position: absolute;
-  top:0%;
-  left:0%;
-  width:100vw;
-  height:100vh;
-  z-index:2;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
   display: none;
   background-color: #202225;
   opacity: 0.9;
- display: none;
 
 }
 
-#screen1{
-position: absolute;
-bottom: 21%;
-right:8%;
-width:20vw;
-height:20vh;
-z-index:0;
-
-
-
-}
-#screen2{
-position: absolute;
-top:10%;
-right:22%;
-width:10vw;
-height:10vh;
-z-index:0;
-
-}
-
-#screen3{
-position: absolute;
-bottom: 25%;
-left:25%;
-width:10vw;
-height:10vh;
-z-index:0;
-
-
-
-}
-
-#screen4{
-position: absolute;
-top:35%;
-left:15%;
-width:10vw;
-height:10vh;
-z-index:0;
-
-
-
-}
-#screen5{
-position: absolute;
-top:20%;
-left:40%;
-width:10vw;
-height:10vh;
-z-index:0;
-
-
-
-}
-#screen6{
-position: absolute;
-bottom:45%;
-left:35%;
-width:10vw;
-height:10vh;
-z-index:0;
-
-
-
-}
-
-
-#police{
-position: absolute;
-top:45%;
-right:15%;
-width:12vw;
-height:40vh;
-z-index:4;
-display:none;
-}
-
-
-#screen7{
-position: absolute;
-top:37%;
-right:28%;
-width:15vw;
-height:15vh;
-z-index:0;
-
-}
-
-
-#screen8{
-position: absolute;
-bottom:20%;
-right:35%;
-width:10vw;
-height:10vh;
-z-index:0;
-
-}
-
-#home{
-position: absolute;
-top:0%;
-left:0%;
-width:100vw;
-height:100vh;
-z-index:1;
-
-display:none;
-
-
-
-}
-#robotAssistant{
+#screen1 {
   position: absolute;
-  top:56%;
-  right:5%;
-  width:20vw;
-  height:30vh;
-  z-index:6;
- display:none;
-
+  bottom: 21%;
+  right: 8%;
+  width: 20vw;
+  height: 20vh;
+  z-index: 0;
 }
 
-#robot0{
-position: absolute;
-top:36%;
-left:22.5%;
-width:17vw;
-height:20vh;
-z-index:5;
-display:none;
-}
-
-#robot1{
-position: absolute;
-top:36%;
-left:39.5%;
-width:17vw;
-height:20vh;
-z-index:5;
-display:none;
-}
-
-#robot2{
-position: absolute;
-top:36%;
-left:55%;
-width:15.2vw;
-height:20vh;
-z-index:5;
-display:none;
-}
-
-#checkup{
-position: absolute;
-top:50%;
-left:30%;
-width:15vw;
-height:40vh;
-z-index:4;
-display:none;
-
-
-
-}
-
-#humanBody{
+#screen2 {
   position: absolute;
-  top:10%;
-  left:5%;
-  width:5vw;
-  height:20vh;
-  z-index:4;
-  display:none;
+  top: 10%;
+  right: 22%;
+  width: 10vw;
+  height: 10vh;
+  z-index: 0;
 }
 
-#chip{
+#screen3 {
   position: absolute;
-  top:67%;
-  right:15%;
-  width:5vw;
-  height:15vh;
-  z-index:6;
-  display:none;
-}
-#bossImg{
-  position: absolute;
-  width:30vw;
-  height:25vh;
-  bottom:5%;
-  right:35%;
-  z-index:4;
-  display:none;
-}
-#imgContainer{
-  position: absolute;
-  top:20%;
-  left:5%;
-  width:50vw;
-  height:50vh;
-  z-index:4;
-  display:none;
-
+  bottom: 25%;
+  left: 25%;
+  width: 10vw;
+  height: 10vh;
+  z-index: 0;
 }
 
+#screen4 {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  width: 10vw;
+  height: 10vh;
+  z-index: 0;
+}
+
+#screen5 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 10vw;
+  height: 10vh;
+  z-index: 0;
+}
+
+#screen6 {
+  position: absolute;
+  bottom: 45%;
+  left: 35%;
+  width: 10vw;
+  height: 10vh;
+  z-index: 0;
+}
+
+#police {
+  position: absolute;
+  top: 45%;
+  right: 15%;
+  width: 12vw;
+  height: 40vh;
+  z-index: 4;
+  display: none;
+}
+
+#screen7 {
+  position: absolute;
+  top: 37%;
+  right: 28%;
+  width: 15vw;
+  height: 15vh;
+  z-index: 0;
+}
+
+#screen8 {
+  position: absolute;
+  bottom: 20%;
+  right: 35%;
+  width: 10vw;
+  height: 10vh;
+  z-index: 0;
+}
+
+#home {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: none;
+}
+
+#robotAssistant {
+  position: absolute;
+  top: 56%;
+  right: 5%;
+  width: 20vw;
+  height: 30vh;
+  z-index: 6;
+  display: none;
+}
+
+#robot0 {
+  position: absolute;
+  top: 36%;
+  left: 22.5%;
+  width: 17vw;
+  height: 20vh;
+  z-index: 5;
+  display: none;
+}
+
+#robot1 {
+  position: absolute;
+  top: 36%;
+  left: 39.5%;
+  width: 17vw;
+  height: 20vh;
+  z-index: 5;
+  display: none;
+}
+
+#robot2 {
+  position: absolute;
+  top: 36%;
+  left: 55%;
+  width: 15.2vw;
+  height: 20vh;
+  z-index: 5;
+  display: none;
+}
+
+#checkup {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  width: 15vw;
+  height: 40vh;
+  z-index: 4;
+  display: none;
+}
+
+#humanBody {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 5vw;
+  height: 20vh;
+  z-index: 4;
+  display: none;
+}
+
+#chip {
+  position: absolute;
+  top: 67%;
+  right: 15%;
+  width: 5vw;
+  height: 15vh;
+  z-index: 6;
+  display: none;
+}
+
+#bossImg {
+  position: absolute;
+  width: 30vw;
+  height: 25vh;
+  bottom: 5%;
+  right: 35%;
+  z-index: 4;
+  display: none;
+}
+
+#imgContainer {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 50vw;
+  height: 50vh;
+  z-index: 4;
+  display: none;
+}
 
 .buttonClass {
-    z-index: 2;
-    cursor: pointer;
-    background-color: yellow;
-    border: none;
-    color: blue;
-    padding: 15px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
+  z-index: 2;
+  cursor: pointer;
+  background-color: yellow;
+  border: none;
+  color: blue;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
 
-  }
+#buyStuff {
+  position: absolute;
+  top: 75%;
+  right: 5%;
+  z-index: 5;
+  display: none;
+}
 
-  #buyStuff {
-    position: absolute;
-    top: 75%;
-    right: 5%;
-    z-index: 5;
-    display: none;
+#reportButton {
+  position: absolute;
+  top: 67%;
+  left: 70%;
+  z-index: 7;
+  display: none;
+}
 
-  }
-  #reportButton{
-    position: absolute;
-    top: 67%;
-    left: 70%;
-    z-index: 7;
-    display:none;
+#startlearn {
+  position: absolute;
+  top: 40%;
+  left: 52%;
+  z-index: 5;
+  display: none;
+}
 
-  }
-  #startlearn{
-    position: absolute;
-    top: 40%;
-    left: 52%;
-    z-index: 5;
-    display:none;
+#buttonShop {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  z-index: 4;
+  display: none;
+}
 
-  }
-  #buttonShop {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    z-index: 4;
-    display: none;
+#exitButton {
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  z-index: 7;
+  display: none;
+}
 
-  }
-  #exitButton{
-    position: absolute;
-    top: 20%;
-    left: 60%;
-    z-index: 7;
-  display:none;
+#buttonHome {
+  position: absolute;
+  top: 30vw;
+  left: 35vw;
+  z-index: 3;
+  display: none;
+}
 
-  }
+#buttonHospital {
+  position: absolute;
+  top: 70vh;
+  left: 5px;
+  z-index: 3;
+  display: none;
+}
 
-  #buttonHome{
-    position: absolute;
-    top: 30vw;
-    left: 35vw;
-    z-index: 3;
-    display: none;
-  }
+#dataCenter {
+  position: absolute;
+  z-index: 4;
+  display: none;
+}
 
-  #buttonHospital {
-    position: absolute;
-    top: 70vh;
-    left: 5px;
-    z-index: 3;
-    display: none;
-  }
+#buttonPolice {
+  position: absolute;
+  z-index: 4;
+  display: none;
+}
 
-  #dataCenter {
-    position: absolute;
-    z-index: 4;
-    display: none;
-  }
+#droneButton {
+  position: absolute;
+  z-index: 4;
+  display: none;
+}
 
-  #buttonPolice {
-    position: absolute;
+#learnButton {
+  position: absolute;
+  z-index: 4;
+  display: none;
+}
 
-    z-index: 4;
-    display: none;
-  }
+#jobButton {
+  position: absolute;
+  z-index: 4;
+  display: none;
+}
 
-  #droneButton {
-    position: absolute;
+.flexContainer {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 65vw;
+  height: 70vh;
+  display: none;
+  flex-wrap: wrap;
+  z-index: 5;
+}
 
-    z-index: 4;
-    display: none;
-  }
-  #learnButton {
-    position: absolute;
-
-    z-index: 4;
-    display: none;
-  }
-  #jobButton {
-    position: absolute;
-
-    z-index: 4;
-    display: none;
-  }
-
-  .flexContainer {
-    position: absolute;
-    top: 10%;
-    left:5%;
-    width:65vw;
-    height:70vh;
-    display: none;
-    flex-wrap: wrap;
-    z-index:5;
-  }
-
-  .flexContainer img{
-    object-fit: contain;
-    width: 15vw;
-    height:15vh;
-    margin: 5%;
-
-  }
+.flexContainer img {
+  object-fit: contain;
+  width: 15vw;
+  height: 15vh;
+  margin: 5%;
+}
