@@ -253,6 +253,14 @@ body {
   font-size: 12px;
 }
 
+#startJourney{
+  position: absolute;
+  bottom: 15%;
+  right: 15%;
+  z-index: 5;
+
+
+}
 #buyStuff {
   position: absolute;
   top: 75%;

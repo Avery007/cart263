@@ -45,12 +45,19 @@ let alertText = 'You dont have a legal digital ID to access our serves.Please go
 
 
 $(document).ready(setup);
+//function setup the cover image
+function setup(){
+   $('.background').attr('src', './assets/images/cover.jpg');
 
-
-//function setup
-function setup() {
+}
+//start the game
+function startJourney() {
+  alert('You are about to travel to the future. Click the images to explore!');
+  // change background
+ $('.background').attr('src', './assets/images/city0.jpg');
+ $('#startJourney').hide();
   // welcome information
-  responsiveVoice.speak("Welcome to the year 2040 ", 'UK English Male', {
+  responsiveVoice.speak('Welcome to the year 2040. Click the images to explore!', 'UK English Male', {
     pitch: 0.6,
     rate: 0.6,
     volume: 10,
